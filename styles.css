@@ -11,8 +11,46 @@ dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
     background: transparent;
 }
 
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
 main {
   display: flex;
+}
+
+header {
+  text-align: center;
+  background-color: #404041;
+  color: #fff;
+  padding: 2.5%;
+}
+
+header h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1;
+  padding-bottom: 5px;
+}
+
+.header-ruler,
+ header h3 {
+  display: inline-block;
+}
+
+.header-ruler {
+  width: 60px;
+  margin: 5px 10px;
+}
+
+.header-narrow-text {
+  font-weight: 300;
+}
+
+.pink {
+  color: #dd1972;
 }
 
 .left-column {
@@ -24,5 +62,5 @@ main {
 .right-column {
   width: 50%;
   height: 1000px;
-  background-color: rgb(209,210,212)
+  background-color: rgb(209,210,212);
 }
