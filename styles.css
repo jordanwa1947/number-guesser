@@ -10,3 +10,19 @@ dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
     vertical-align: baseline;
     background: transparent;
 }
+
+main {
+  display: flex;
+}
+
+.left-column {
+  width: 50%;
+  height: 1000px;
+  background-color: rgb(245,246,248);
+}
+
+.right-column {
+  width: 50%;
+  height: 1000px;
+  background-color: rgb(209,210,212)
+}
