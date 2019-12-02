@@ -18,11 +18,11 @@ main {
 .left-column {
   width: 50%;
   height: 1000px;
-  background-color: rgb(245,246,248);
+  background-color: #f7f7f7;
 }
 
 .right-column {
   width: 50%;
   height: 1000px;
-  background-color: rgb(209,210,212)
+  background-color: #d0d2d3;
 }
