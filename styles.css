@@ -16,10 +16,6 @@ dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
   box-sizing: border-box;
 }
 
-main {
-  display: flex;
-}
-
 header {
   text-align: center;
   background-color: #404041;
@@ -53,14 +49,14 @@ main {
 }
 
 .left-column {
-  width: 50%;
-  height: 1000px;
+  width: 50vw;
+  height: 100vh;
   background-color: #f7f7f7;
 }
 
 .right-column {
-  width: 50%;
-  height: 1000px;
+  width: 50vw;
+  height: 100vh;
   background-color: #d0d2d3;
 }
 
