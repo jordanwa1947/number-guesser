@@ -63,7 +63,7 @@ header {
 button {
   padding: 1% 2.5%;
   border-radius: 20px;
-  font-size: .8em;
+  font-size: 15px;
   background-color: rgb(127,127,127);
   color: #fff;
 }
@@ -104,9 +104,9 @@ arranged in order that they appear in the html
 
 .gameplay-cont {
   padding: 10px;
-  width: 440px;
   background-color: white;
   border: solid 2px rgb(238,238,238);
+  margin-top: 15px;
 }
 
 .challenger {
@@ -126,15 +126,19 @@ arranged in order that they appear in the html
 .challenger-guess span input{
   padding: 6px;
   border: solid 2px rgb(241,241,241);
+  width: 94.6%;
+}
+
+.name-field-cont {
+  width: 63.4%;
+}
+
+.guess-field-cont {
+  width: 36.6%;
 }
 
 .name-input {
-  width: 260px;
   margin-right: 14px;
-}
-
-.guess-input {
-  width: 140px;
 }
 
 .current-range {
@@ -147,6 +151,11 @@ arranged in order that they appear in the html
 
 .guess-button-cont {
   display: flex;
+  align-content: center;
+}
+
+.guess-button-cont button {
+  margin: 0px auto;
 }
 
 /*
