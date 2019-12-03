@@ -48,14 +48,39 @@ header h1 {
   font-weight: 300;
 }
 
-main {
-  display: flex;
+/*
+Global Classes used in guess card
+ */
+
+.underline {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.sub-head {
+  font-size: 16px;
 }
 
 .left-column {
   width: 50vw;
   height: 100vh;
   background-color: #f7f7f7;
+}
+
+/*
+General Classes Used in the Guess Card
+arranged in order that they appear in the html
+ */
+
+main {
+  display: flex;
 }
 
 .gameplay-cont {
@@ -93,22 +118,6 @@ main {
   width: 140px;
 }
 
-.underline {
-  text-decoration: underline;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.text {
-  font-size: 14px;
-}
-
-.sub-head {
-  font-size: 16px;
-}
-
 .current-range {
   margin-bottom: 15px;
 }
@@ -130,6 +139,10 @@ main {
   background-color: #d0d2d3;
   border-color: rgb(220,221,221);
 }
+
+/* 
+End of CSS for this feature
+ */
 
 .right-column {
   width: 50vw;
