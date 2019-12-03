@@ -77,6 +77,18 @@ Global Classes used in guess card
   font-size: 16px;
 }
 
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
 .left-column {
   width: 50vw;
   height: 100vh;
@@ -150,7 +162,7 @@ main {
   border-color: rgb(220,221,221);
 }
 
-/* 
+/*
 End of CSS for this feature
  */
 
@@ -200,4 +212,55 @@ End of CSS for this feature
 
 .range-input label {
   display: block;
+}
+
+.results-card {
+  background-color: #fff;
+  margin: 2.5%;
+  border-radius: 5px;
+  color: #6e6e6e;
+}
+
+.results-card hr {
+  width: 90%;
+}
+
+.results-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5% 15%;
+}
+
+.results-top span {
+  width: 30%;
+}
+
+.results-middle {
+  text-align: center;
+  padding: 2.5% 0;
+  font-size: 18px;
+}
+
+.results-middle h2 {
+  margin-bottom: 1%;
+}
+
+.results-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5%;
+}
+
+.results-bottom span {
+  width: 32%;
+}
+
+.close-button-circle {
+  background-color: #6e6e6e;
+  padding: 1% 5%;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
 }
