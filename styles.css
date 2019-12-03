@@ -16,6 +16,10 @@ dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
   box-sizing: border-box;
 }
 
+.pink {
+  color: #dd1972;
+}
+
 header {
   text-align: center;
   background-color: #404041;
@@ -54,12 +58,81 @@ main {
   background-color: #f7f7f7;
 }
 
+.gameplay-cont {
+  padding: 10px;
+  width: 440px;
+  background-color: white;
+  border: solid 2px rgb(238,238,238);
+}
+
+.challenger {
+  margin-top: 4px;
+}
+
+.challenger-guess {
+  display: block;
+  display: flex;
+  margin-bottom: 26px;
+}
+
+.challenger-guess span label{
+  display: block;
+}
+
+.challenger-guess span input{
+  padding: 6px;
+  border: solid 2px rgb(241,241,241);
+}
+
+.name-input {
+  width: 260px;
+  margin-right: 14px;
+}
+
+.guess-input {
+  width: 140px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.sub-head {
+  font-size: 16px;
+}
+
+.current-range {
+  margin-bottom: 15px;
+}
+
+.guess-button-cont {
+  display: flex;
+}
+
+.main-button {
+  border-radius: 25px;
+  border-color: rgb(158,158,158);
+  color: white;
+  margin: auto;
+  padding: 4px 17px;
+  background-color: rgb(127,127,127);
+}
+
+.disabled {
+  background-color: #d0d2d3;
+  border-color: rgb(220,221,221);
+}
+
 .right-column {
   width: 50vw;
   height: 100vh;
   background-color: #d0d2d3;
-}
-
-.pink {
-  color: #dd1972;
 }
