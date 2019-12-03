@@ -16,8 +16,41 @@ dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
   box-sizing: border-box;
 }
 
+/*
+General Styles
+ */
+
 .pink {
   color: #dd1972;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text {
+  font-size: .8em;
+}
+
+.sub-head {
+  font-size: 16px;
+}
+
+.disabled {
+  background-color: #d0d2d3;
+  border-color: rgb(220,221,221);
+}
+
+/*
+End of General Styles
+ */
+
+main {
+  display: flex;
 }
 
 header {
@@ -31,8 +64,7 @@ button {
   padding: 1% 2.5%;
   border-radius: 20px;
   font-size: .8em;
-  font-weight: bold;
-  background-color: #d0d2d3;
+  background-color: rgb(127,127,127);
   color: #fff;
 }
 
@@ -57,41 +89,18 @@ header h1 {
   font-weight: 300;
 }
 
-/*
-Global Classes used in guess card
- */
-
-.underline {
-  text-decoration: underline;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.text {
-  font-size: 14px;
-}
-
-.sub-head {
-  font-size: 16px;
-}
-
-.left-column {
-  width: 50vw;
-  height: 100vh;
-  background-color: #f7f7f7;
-  padding: 0 2.5%;
-}
 
 /*
 General Classes Used in the Guess Card
 arranged in order that they appear in the html
  */
 
-main {
-  display: flex;
-}
+.left-column {
+  width: 50vw;
+  height: 100vh;
+  background-color: #f7f7f7;
+  padding: 0 2.5%;
+ }
 
 .gameplay-cont {
   padding: 10px;
@@ -132,40 +141,22 @@ main {
   margin-bottom: 15px;
 }
 
+.range-numb {
+  text-decoration: underline;
+}
+
 .guess-button-cont {
   display: flex;
 }
 
-.main-button {
-  border-radius: 25px;
-  border-color: rgb(158,158,158);
-  color: white;
-  margin: auto;
-  padding: 4px 17px;
-  background-color: rgb(127,127,127);
-}
-
-.disabled {
-  background-color: #d0d2d3;
-  border-color: rgb(220,221,221);
-}
-
-/* 
-End of CSS for this feature
+/*
+End of CSS for Guess Section
  */
 
 .right-column {
   width: 50vw;
   height: 100vh;
   background-color: #d0d2d3;
-}
-
-.pink {
-  color: #dd1972;
-}
-
-.white {
-  background-color: #fff;
 }
 
 .range-input {
