@@ -44,6 +44,22 @@ header h1 {
   font-weight: 300;
 }
 
+main {
+  display: flex;
+}
+
+.left-column {
+  width: 50vw;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.right-column {
+  width: 50vw;
+  height: 100vh;
+  background-color: #d0d2d3;
+}
+
 .pink {
   color: #dd1972;
 }
