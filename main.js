@@ -44,7 +44,19 @@ function clearGuessFields () {
 bubbleParent.addEventListener('submit', pushFormData);
 
 function pushFormData() {
-  console.log('woof');
+  const form = document.querySelector('.main-game-form');
+  const challengerOneName = document.getElementById('challenger-one-name-push');
+  const challengerOneGuess = document.getElementById('challenger-one-guess-push');
+  const challengerOneNameInput = document.getElementById('challenger-one-name');
+  const challengerOneGuessInput = document.getElementById('challenger-one-guess');
+  challengerOneName.innerHTML = challengerOneNameInput.value;
+  challengerOneGuess.innerHTML = challengerOneGuessInput.value;
+  const challengerTwoName = document.getElementById('challenger-two-name-push');
+  const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
+  const challengerTwoNameInput = document.getElementById('challenger-two-name');
+  const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
+  challengerTwoName.innerHTML = challengerTwoNameInput.value;
+  challengerTwoGuess.innerHTML = challengerTwoGuessInput.value;
   form.reset();
   event.preventDefault();
 }
