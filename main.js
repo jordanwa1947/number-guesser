@@ -3,14 +3,15 @@ const bubbleParent = document.querySelector('main');
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
 const clearFormButton = document.getElementById('clear-form');
+const submitGuess = document.getElementById('submit-guess')
 
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
+submitGuess.addEventListener('click', clearGuessFields)
 
 function mainFormValidation() {
   const form = document.getElementById('guess-form');
-  const submitGuess = document.getElementById('submit-guess')
   if (form.checkValidity() === true) {
     submitGuess.removeAttribute('disabled');
     submitGuess.classList.remove('disabled');
