@@ -49,8 +49,8 @@ function pushFormData() {
   const challengerOneGuess = document.getElementById('challenger-one-guess-push');
   const challengerOneNameInput = document.getElementById('challenger-one-name');
   const challengerOneGuessInput = document.getElementById('challenger-one-guess');
-  challengerOneName.innerHTML = challengerOneNameInput.value;
-  challengerOneGuess.innerHTML = challengerOneGuessInput.value;
+  challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
+  challengerOneGuess.innerHTML = `<p class="challenger-one-guess-number">${challengerOneGuessInput.value}</p>`;
   const challengerTwoName = document.getElementById('challenger-two-name-push');
   const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
   const challengerTwoNameInput = document.getElementById('challenger-two-name');
