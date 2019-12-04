@@ -45,6 +45,18 @@ General Styles
   border-color: rgb(220,221,221);
 }
 
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
 /*
 End of General Styles
  */
@@ -162,6 +174,49 @@ arranged in order that they appear in the html
 End of CSS for Guess Section
  */
 
+
+ /*
+Latest Guess Container
+*/
+
+.latest-guesses {
+  padding: 10px;
+  border: solid 2px rgb(238,238,238);
+  margin-top: 15px;
+  height: 230px;
+}
+
+.latest-guesses-cont {
+  display: flex;
+}
+
+.latest-guess-cont {
+  width: 100%;
+}
+
+.latest-guess-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.latest-guess-partition {
+  border-left: 1px solid #d0d2d3;
+  height: 190px;
+  bottom: 25px;
+  position: relative;
+}
+
+.latest-guess {
+  height: 100px;
+}
+
+.guess-state {
+  font-size: 18px;
+}
+/*
+End of Latest Guess Container
+ */
+
 .right-column {
   width: 50vw;
   height: 100vh;
@@ -254,18 +309,6 @@ End of CSS for Guess Section
   font-size: 20px;
   font-weight: bold;
   border: none;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
 }
 
 .winner {
