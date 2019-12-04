@@ -6,6 +6,7 @@ const clearFormButton = document.getElementById('clear-form');
 
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
+clearFormButton.addEventListener('click', clearGuessFields);
 
 function mainFormValidation() {
   const form = document.getElementById('guess-form');
@@ -24,11 +25,18 @@ function activateClearFormButton () {
     if (guessFields[i].value !== '') {
       clearFormButton.removeAttribute('disabled');
       clearFormButton.classList.remove('disabled');
-      console.log(guessFields[i].value)
       break;
     } else {
       clearFormButton.classList.add('disabled');
       clearFormButton.setAttribute('disabled', "");
     }
   }
+}
+
+function clearGuessFields () {
+  for (let i = 0; i < guessFields.length; i++) {
+    guessFields[i].value = '';
+  }
+  clearFormButton.classList.add('disabled');
+  clearFormButton.setAttribute('disabled', "");
 }
