@@ -27,33 +27,33 @@
         </section>
         <section class="gameplay-cont">
           <p class="current-range text"> The Current Range is <span class="range-numb bold">1</span> to <span class="range-numb bold">100</span> </p>
-          <form class="gameplay-in put">
+          <form class="main-game-form">
             <p class="bold challenger-title sub-head"> Challenger 1 </p>
             <section class="challenger-guess">
               <span class="name-field-cont">
                 <label for="challenger-one-name" class="text"> Name </label>
-                <input id="challenger-one-name" class="name-input" type="text">
+                <input id="challenger-one-name" class="name-input" type="text" required>
               </span>
               <span class="guess-field-cont">
                 <label for="challenger-one-guess" class="text"> Guess </label>
-                <input id="challenger-one-guess" class="guess-input" type="text">
+                <input id="challenger-one-guess" class="guess-input" type="text" required>
               </span>
             </section>
             <p class="bold challenger sub-head"> Challenger 2 </p>
             <section class="challenger-guess">
               <span class="name-field-cont">
                 <label for="challenger-two-name" class="text"> Name </label>
-                <input id="challenger-two-name" class="name-input" type="text">
+                <input id="challenger-two-name" class="name-input" type="text" required>
               </span>
               <span class="guess-field-cont">
                 <label for="challenger-two-guess" class="text"> Guess </label>
-                <input id="challenger-two-guess" class="guess-input" type="text">
+                <input id="challenger-two-guess" class="guess-input" type="text" required>
               </span>
             </section>
             <div class="guess-button-cont">
-              <button class="bold disabled"> SUBMIT GUESS </button disabled=true>
-              <button class="bold disabled"> RESET GAME </button disabled>
-              <button class="bold disabled"> CLEAR FORM </button disabled>
+              <button class="bold disabled" disabled id="submit-guess"> SUBMIT GUESS </button>
+              <button class="bold disabled" disabled> RESET GAME </button>
+              <button class="bold disabled" disabled> CLEAR FORM </button>
             </div>
           </form>
         </section>
