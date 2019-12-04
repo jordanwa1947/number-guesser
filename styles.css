@@ -201,3 +201,73 @@ End of CSS for Guess Section
 .range-input label {
   display: block;
 }
+
+.results-card {
+  background-color: #fff;
+  margin: 2.5%;
+  border-radius: 2.5px;
+  border: solid 0.5px gray;
+  color: #6e6e6e;
+  font-size: 16.5px;
+}
+
+.results-card hr {
+  width: 90%;
+}
+
+.results-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5% 15%;
+}
+
+.results-top span {
+  width: 30%;
+}
+
+.results-middle {
+  text-align: center;
+  padding: 2.5% 0;
+  font-size: 15px;
+}
+
+.results-middle h2 {
+  font-size: 35px;
+  margin-bottom: 0.5%;
+}
+
+.results-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5% 6%;
+}
+
+.results-bottom span {
+  width: 32%;
+}
+
+.close-button-circle {
+  background-color: #6e6e6e;
+  padding: 1% 5%;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.winner {
+  font-size: 28px;
+}
