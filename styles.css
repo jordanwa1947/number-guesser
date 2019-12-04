@@ -205,8 +205,10 @@ End of CSS for Guess Section
 .results-card {
   background-color: #fff;
   margin: 2.5%;
-  border-radius: 5px;
+  border-radius: 2.5px;
+  border: solid 0.5px gray;
   color: #6e6e6e;
+  font-size: 16.5px;
 }
 
 .results-card hr {
@@ -226,17 +228,18 @@ End of CSS for Guess Section
 .results-middle {
   text-align: center;
   padding: 2.5% 0;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .results-middle h2 {
-  margin-bottom: 1%;
+  font-size: 35px;
+  margin-bottom: 0.5%;
 }
 
 .results-bottom {
   display: flex;
   justify-content: space-between;
-  padding: 2.5%;
+  padding: 2.5% 6%;
 }
 
 .results-bottom span {
@@ -263,4 +266,8 @@ End of CSS for Guess Section
 
 .align-center {
   text-align: center;
+}
+
+.winner {
+  font-size: 28px;
 }
