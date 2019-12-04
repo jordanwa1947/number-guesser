@@ -158,18 +158,8 @@ arranged in order that they appear in the html
   margin: 0px auto;
 }
 
-<<<<<<< HEAD
-.disabled {
-  background-color: #d0d2d3;
-  border-color: rgb(220,221,221);
-}
-
-/*
-End of CSS for this feature
-=======
 /*
 End of CSS for Guess Section
->>>>>>> master
  */
 
 .right-column {
@@ -261,4 +251,16 @@ End of CSS for Guess Section
   font-size: 20px;
   font-weight: bold;
   border: none;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
 }
