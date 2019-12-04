@@ -234,7 +234,7 @@ End of Latest Guess Container
 .set-range {
   border: solid 0.5px #e4e4e4;
   margin-top: 5%;
-  padding:  5% 2.5%;
+  padding:  3% 2.5%;
   box-shadow: 1px 1px 1px #e4e4e4;
   border-radius: 2px;
   font-size: 12px;
@@ -242,7 +242,7 @@ End of Latest Guess Container
 
 .set-range h3 {
   font-size: 16px;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 
 .set-range button {
@@ -256,6 +256,10 @@ End of Latest Guess Container
   display: inline-block;
   width: 35%;
   margin-right: 2.5%;
+}
+
+.set-range input {
+  margin-top: 2.5%;
 }
 
 .range-input label {
