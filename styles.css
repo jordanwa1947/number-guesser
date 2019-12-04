@@ -69,7 +69,7 @@ header {
   text-align: center;
   background-color: #404041;
   color: #fff;
-  padding: 2.5%;
+  padding: 1.5%;
 }
 
 button {
@@ -81,10 +81,14 @@ button {
 }
 
 header h1 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1;
   padding-bottom: 5px;
+}
+
+header h3 {
+  font-size: 15px;
 }
 
 .header-ruler,
@@ -93,7 +97,7 @@ header h1 {
 }
 
 .header-ruler {
-  width: 60px;
+  width: 45px;
   margin: 5px 10px;
 }
 
@@ -109,9 +113,9 @@ arranged in order that they appear in the html
 
 .left-column {
   width: 50vw;
-  height: 100vh;
   background-color: #f7f7f7;
   padding: 0 2.5%;
+  padding-bottom: 2.5%;
  }
 
 .gameplay-cont {
@@ -163,11 +167,13 @@ arranged in order that they appear in the html
 
 .guess-button-cont {
   display: flex;
-  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .guess-button-cont button {
-  margin: 0px auto;
+  flex-grow: 1;
+  margin: 2.5%;
 }
 
 /*
@@ -219,7 +225,6 @@ End of Latest Guess Container
 
 .right-column {
   width: 50vw;
-  height: 100vh;
   background-color: #d0d2d3;
 }
 
@@ -231,13 +236,15 @@ End of Latest Guess Container
 .set-range {
   border: solid 0.5px #e4e4e4;
   margin-top: 5%;
-  padding:  5% 2.5%;
+  padding:  3% 2.5%;
   box-shadow: 1px 1px 1px #e4e4e4;
   border-radius: 2px;
+  font-size: 12px;
 }
 
 .set-range h3 {
-  margin-bottom: 2%;
+  font-size: 16px;
+  margin-bottom: 1%;
 }
 
 .set-range button {
@@ -251,6 +258,10 @@ End of Latest Guess Container
   display: inline-block;
   width: 35%;
   margin-right: 2.5%;
+}
+
+.set-range input {
+  margin-top: 2.5%;
 }
 
 .range-input label {
