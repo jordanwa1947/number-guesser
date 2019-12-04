@@ -4,6 +4,7 @@ const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
 const clearFormButton = document.getElementById('clear-form');
 const submitGuess = document.getElementById('submit-guess')
+const resetGame = document.getElementById('reset-game')
 
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
@@ -38,8 +39,16 @@ function clearGuessFields () {
   for (let i = 0; i < guessFields.length; i++) {
     guessFields[i].value = '';
   }
+  disableGuessButtons();
+}
+
+function disableGuessButtons () {
   clearFormButton.classList.add('disabled');
   clearFormButton.setAttribute('disabled', "");
+  submitGuess.classList.add('disabled');
+  submitGuess.setAttribute('disabled', "");
+  resetGame.classList.add('disabled');
+  resetGame.setAttribute('disabled', "");
 }
 
 bubbleParent.addEventListener('submit', pushFormData);
