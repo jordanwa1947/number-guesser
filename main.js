@@ -40,3 +40,11 @@ function clearGuessFields () {
   clearFormButton.classList.add('disabled');
   clearFormButton.setAttribute('disabled', "");
 }
+
+bubbleParent.addEventListener('submit', pushFormData);
+
+function pushFormData() {
+  console.log('woof');
+  form.reset();
+  event.preventDefault();
+}
