@@ -162,6 +162,26 @@ arranged in order that they appear in the html
 End of CSS for Guess Section
  */
 
+ /*
+Latest Guess Container
+*/
+
+.latest-guess-cont {
+  display: flex;
+}
+
+.latest-guess-partition {
+  border-left: 2px solid #000;
+  height: 200px
+}
+
+.latest-guess {
+  height: 70px;
+}
+/*
+End of Latest Guess Container
+ */
+
 .right-column {
   width: 50vw;
   height: 100vh;
