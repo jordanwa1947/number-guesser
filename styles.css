@@ -167,11 +167,13 @@ arranged in order that they appear in the html
 
 .guess-button-cont {
   display: flex;
-  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .guess-button-cont button {
-  margin: 0px auto;
+  flex-grow: 1;
+  margin: 2.5%;
 }
 
 /*
