@@ -50,13 +50,13 @@ function pushFormData() {
   const challengerOneNameInput = document.getElementById('challenger-one-name');
   const challengerOneGuessInput = document.getElementById('challenger-one-guess');
   challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
-  challengerOneGuess.innerHTML = `<p class="challenger-one-guess-number">${challengerOneGuessInput.value}</p>`;
+  challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
   const challengerTwoName = document.getElementById('challenger-two-name-push');
   const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
   const challengerTwoNameInput = document.getElementById('challenger-two-name');
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
-  challengerTwoName.innerHTML = challengerTwoNameInput.value;
-  challengerTwoGuess.innerHTML = challengerTwoGuessInput.value;
+  challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
+  challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
   form.reset();
   event.preventDefault();
 }
