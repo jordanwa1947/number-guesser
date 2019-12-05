@@ -1,5 +1,6 @@
 const bubbleParent = document.querySelector('main');
 let randNumb = generateRandomNumber();
+let guessCounter = 0;
 
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
@@ -66,6 +67,7 @@ function pushFormData() {
   const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
   const challengerTwoNameInput = document.getElementById('challenger-two-name');
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
+  guessCounter += 2;
   guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value, challengerOneNameInput.value, challengerTwoNameInput.value)
   challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
   challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
@@ -140,7 +142,7 @@ function insertResultCard (firstUserName, secondUserName, winner) {
       </div>
     </hr>
     <div class="results-bottom">
-      <span class="align-left"><strong>47</strong> GUESSES</span>
+      <span class="align-left"><strong>${guessCounter}</strong> GUESSES</span>
       <span class="align-center"><strong>1</strong> MINUTE <strong>35</strong> SECONDS</span>
       <span class="align-right"><span class="close-button-circle">&times;</span></span>
     </div>
