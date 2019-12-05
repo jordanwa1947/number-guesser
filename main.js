@@ -148,8 +148,3 @@ function insertResultCard (firstUserName, secondUserName, winner) {
     </div>
   </section>`)
 }
-
-gameplayCont.addEventListener('submit', incrementGuessCounter);
-
-function incrementGuessCounter() {
-}
