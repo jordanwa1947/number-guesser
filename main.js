@@ -88,3 +88,10 @@ function setRange() {
 function generateRandomNumber(min=0, max=100) {
   return Math.floor(Math.random() * (max - min) + min);
 }
+
+function insertGuessProximity (userOneProximity, userTwoProximity) {
+  const firstGuessCont = document.getElementById('user-one-guess-result');
+  const secondGuessCont = document.getElementById('user-two-guess-result');
+  userOneCont.innerText = userOneProximity;
+  userTwoCont.innerText = userOneProximity;
+}
