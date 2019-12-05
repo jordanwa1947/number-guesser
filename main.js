@@ -142,4 +142,13 @@ function insertResultCard (firstUserName, secondUserName, winner) {
       <span class="align-right"><span class="close-button-circle">&times;</span></span>
     </div>
   </section>`)
+  deleteResultsCardOnClick();
+}
+
+function deleteResultsCardOnClick () {
+  const resultCards = gameResultsColumn.querySelectorAll('.results-card');
+  const closeX = resultCards[resultCards.length - 1].querySelector('.close-button-circle');
+  closeX.addEventListener('click', function () {
+    console.log(this);
+  })
 }
