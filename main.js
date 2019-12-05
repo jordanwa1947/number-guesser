@@ -1,4 +1,5 @@
 const bubbleParent = document.querySelector('main');
+let randNumb = generateRandomNumber();
 
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
@@ -59,12 +60,13 @@ function pushFormData() {
   const challengerOneGuess = document.getElementById('challenger-one-guess-push');
   const challengerOneNameInput = document.getElementById('challenger-one-name');
   const challengerOneGuessInput = document.getElementById('challenger-one-guess');
-  challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
-  challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
   const challengerTwoName = document.getElementById('challenger-two-name-push');
   const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
   const challengerTwoNameInput = document.getElementById('challenger-two-name');
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
+  guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value)
+  challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
+  challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
   challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
   challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
   clearGuessFields();
@@ -82,4 +84,37 @@ function setRange() {
   maxRange.innerHTML = maxRangeInput.value;
   event.preventDefault();
   rangeField.reset();
+}
+
+function generateRandomNumber(min=0, max=100) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function guessComparison (firstUserGuess, secondUserGuess) {
+  firstGuess = Number.parseInt(firstUserGuess);
+  secondGuess = Number.parseInt(secondUserGuess);
+  let firstGuessProximity;
+  let secondGuessProximity
+  if (firstGuess > randNumb) {
+    firstGuessProximity = `that's too high`
+  } else if (firstGuess < randNumb) {
+    firstGuessProximity = `that's too low`
+  } else if (firstGuess === randNumb) {
+    firstGuessProximity = 'BOOM!'
+  }
+  if (secondGuess > randNumb) {
+    secondGuessProximity = `that's too high`
+  } else if (secondGuess < randNumb) {
+    secondGuessProximity = `that's too low`
+  } else if (secondGuess === randNumb) {
+    secondGuessProximity = 'BOOM!'
+  }
+  insertGuessProximity(firstGuessProximity, secondGuessProximity);
+}
+
+function insertGuessProximity (userOneProximity, userTwoProximity) {
+  const firstGuessCont = document.getElementById('user-one-guess-result');
+  const secondGuessCont = document.getElementById('user-two-guess-result');
+  firstGuessCont.innerText = userOneProximity;
+  secondGuessCont.innerText = userTwoProximity;
 }
