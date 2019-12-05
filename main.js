@@ -10,6 +10,8 @@ const submitGuess = document.getElementById('submit-guess');
 const resetGame = document.getElementById('reset-game');
 const clearFormButton = document.getElementById('clear-form');
 
+const gameResultsColumn = document.getElementById('game-results-column');
+
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
@@ -64,7 +66,7 @@ function pushFormData() {
   const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
   const challengerTwoNameInput = document.getElementById('challenger-two-name');
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
-  guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value)
+  guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value, challengerOneNameInput.value, challengerTwoNameInput.value)
   challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
   challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
   challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
@@ -90,7 +92,7 @@ function generateRandomNumber(min=0, max=100) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function guessComparison (firstUserGuess, secondUserGuess) {
+function guessComparison (firstUserGuess, secondUserGuess, firstUserName, secondUserName) {
   firstGuess = Number.parseInt(firstUserGuess);
   secondGuess = Number.parseInt(secondUserGuess);
   let firstGuessProximity;
@@ -101,6 +103,7 @@ function guessComparison (firstUserGuess, secondUserGuess) {
     firstGuessProximity = `that's too low`
   } else if (firstGuess === randNumb) {
     firstGuessProximity = 'BOOM!'
+    insertResultCard(firstUserName, secondUserName, firstUserName);
   }
   if (secondGuess > randNumb) {
     secondGuessProximity = `that's too high`
@@ -108,6 +111,7 @@ function guessComparison (firstUserGuess, secondUserGuess) {
     secondGuessProximity = `that's too low`
   } else if (secondGuess === randNumb) {
     secondGuessProximity = 'BOOM!'
+    insertResultCard(firstUserName, secondUserName, secondUserName);
   }
   insertGuessProximity(firstGuessProximity, secondGuessProximity);
 }
@@ -117,4 +121,25 @@ function insertGuessProximity (userOneProximity, userTwoProximity) {
   const secondGuessCont = document.getElementById('user-two-guess-result');
   firstGuessCont.innerText = userOneProximity;
   secondGuessCont.innerText = userTwoProximity;
+}
+
+function insertResultCard (firstUserName, secondUserName, winner) {
+  gameResultsColumn.insertAdjacentHTML('beforeend', `<section class="results-card">
+    <div class="results-top">
+      <span class="align-left bold">${firstUserName}</span>
+      <span class="align-center">vs</span>
+      <span class="align-right bold">${secondUserName}</span>
+    </div>
+    <hr>
+      <div class="results-middle">
+        <h2>${winner}</h2>
+        <p class="winner">WINNER</h3>
+      </div>
+    </hr>
+    <div class="results-bottom">
+      <span class="align-left"><strong>47</strong> GUESSES</span>
+      <span class="align-center"><strong>1</strong> MINUTE <strong>35</strong> SECONDS</span>
+      <span class="align-right"><span class="close-button-circle">&times;</span></span>
+    </div>
+  </section>`)
 }
