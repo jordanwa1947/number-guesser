@@ -84,6 +84,7 @@ function setRange() {
   let maxRangeValue = Number.parseInt(maxRangeInput.value);
   minRange.innerHTML = minRangeInput.value;
   maxRange.innerHTML = maxRangeInput.value;
+  randNumb = generateRandomNumber(minRangeValue, maxRangeValue);
   event.preventDefault();
   rangeField.reset();
 }
