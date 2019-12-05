@@ -67,4 +67,6 @@ rangeField.addEventListener('submit', setRange)
 
 function setRange() {
   console.log('woof');
+  event.preventDefault();
+  rangeField.reset();
 }
