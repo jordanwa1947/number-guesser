@@ -213,12 +213,29 @@ Latest Guess Container
 }
 
 .latest-guess {
-  height: 100px;
+  height: 80px;
+  color: #dd1972;
+  font-weight: bolder;
+  font-size: 45px;
 }
 
 .guess-state {
   font-size: 18px;
 }
+
+.current-guess {
+}
+
+.challenger-name {
+  font-size: 20px;
+  color: #808080;
+  margin-bottom: 2.5%;
+}
+
+.challenger-guess-number {
+  margin-top: 2.5%;
+}
+
 /*
 End of Latest Guess Container
  */

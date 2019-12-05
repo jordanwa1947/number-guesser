@@ -40,3 +40,23 @@ function clearGuessFields () {
   clearFormButton.classList.add('disabled');
   clearFormButton.setAttribute('disabled', "");
 }
+
+bubbleParent.addEventListener('submit', pushFormData);
+
+function pushFormData() {
+  const form = document.querySelector('.main-game-form');
+  const challengerOneName = document.getElementById('challenger-one-name-push');
+  const challengerOneGuess = document.getElementById('challenger-one-guess-push');
+  const challengerOneNameInput = document.getElementById('challenger-one-name');
+  const challengerOneGuessInput = document.getElementById('challenger-one-guess');
+  challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
+  challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
+  const challengerTwoName = document.getElementById('challenger-two-name-push');
+  const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
+  const challengerTwoNameInput = document.getElementById('challenger-two-name');
+  const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
+  challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
+  challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
+  form.reset();
+  event.preventDefault();
+}
