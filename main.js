@@ -37,6 +37,7 @@ function activateClearFormButton () {
 function clearGuessFields () {
   guessForm.reset();
   disableGuessButtons();
+  event.preventDefault();
 }
 
 function disableGuessButtons () {
