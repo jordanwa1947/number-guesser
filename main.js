@@ -80,6 +80,8 @@ function setRange() {
   const maxRangeInput = document.getElementById("max-range-input");
   const minRange = document.getElementById("min-range-num");
   const maxRange = document.getElementById("max-range-num");
+  let minRangeValue = Number.parseInt(minRangeInput.value);
+  let maxRangeValue = Number.parseInt(maxRangeInput.value);
   minRange.innerHTML = minRangeInput.value;
   maxRange.innerHTML = maxRangeInput.value;
   event.preventDefault();
