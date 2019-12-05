@@ -66,7 +66,12 @@ function pushFormData() {
 rangeField.addEventListener('submit', setRange)
 
 function setRange() {
-  console.log('woof');
+  const minRangeInput = document.getElementById("min-range-input");
+  const maxRangeInput = document.getElementById("max-range-input");
+  const minRange = document.getElementById("min-range-num");
+  const maxRange = document.getElementById("max-range-num");
+  minRange.innerHTML = minRangeInput.value;
+  maxRange.innerHTML = maxRangeInput.value;
   event.preventDefault();
   rangeField.reset();
 }
