@@ -3,6 +3,7 @@ const bubbleParent = document.querySelector('main');
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
 const clearFormButton = document.getElementById('clear-form');
+const gameplayCont = document.getElementById('gameplay-cont');
 
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
@@ -41,7 +42,7 @@ function clearGuessFields () {
   clearFormButton.setAttribute('disabled', "");
 }
 
-bubbleParent.addEventListener('submit', pushFormData);
+gameplayCont.addEventListener('submit', pushFormData);
 
 function pushFormData() {
   const form = document.querySelector('.main-game-form');
