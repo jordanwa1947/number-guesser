@@ -9,7 +9,6 @@ const resetGame = document.getElementById('reset-game')
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
-submitGuess.addEventListener('click', clearGuessFields)
 
 function mainFormValidation() {
   const form = document.getElementById('guess-form');
@@ -36,9 +35,7 @@ function activateClearFormButton () {
 }
 
 function clearGuessFields () {
-  for (let i = 0; i < guessFields.length; i++) {
-    guessFields[i].value = '';
-  }
+  guessForm.reset();
   disableGuessButtons();
 }
 
@@ -54,7 +51,6 @@ function disableGuessButtons () {
 bubbleParent.addEventListener('submit', pushFormData);
 
 function pushFormData() {
-  const form = document.querySelector('.main-game-form');
   const challengerOneName = document.getElementById('challenger-one-name-push');
   const challengerOneGuess = document.getElementById('challenger-one-guess-push');
   const challengerOneNameInput = document.getElementById('challenger-one-name');
@@ -67,6 +63,6 @@ function pushFormData() {
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
   challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
   challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
-  form.reset();
+  clearGuessFields();
   event.preventDefault();
 }
