@@ -4,6 +4,7 @@ const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
 const clearFormButton = document.getElementById('clear-form');
 const gameplayCont = document.getElementById('gameplay-cont');
+const rangeField = document.getElementById('range-field');
 
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
@@ -60,4 +61,10 @@ function pushFormData() {
   challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
   form.reset();
   event.preventDefault();
+}
+
+rangeField.addEventListener('submit', setRange)
+
+function setRange() {
+  console.log('woof');
 }
