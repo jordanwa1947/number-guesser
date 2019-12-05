@@ -1,4 +1,5 @@
 const bubbleParent = document.querySelector('main');
+let randNumb = generateRandomNumber();
 
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
@@ -82,4 +83,8 @@ function setRange() {
   maxRange.innerHTML = maxRangeInput.value;
   event.preventDefault();
   rangeField.reset();
+}
+
+function generateRandomNumber(min=0, max=100) {
+  return Math.floor(Math.random() * (max - min) + min);
 }
