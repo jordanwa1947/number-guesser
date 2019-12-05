@@ -2,9 +2,12 @@ const bubbleParent = document.querySelector('main');
 
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
-const clearFormButton = document.getElementById('clear-form');
 const gameplayCont = document.getElementById('gameplay-cont');
 const rangeField = document.getElementById('range-field');
+
+const submitGuess = document.getElementById('submit-guess');
+const resetGame = document.getElementById('reset-game');
+const clearFormButton = document.getElementById('clear-form');
 
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
@@ -12,7 +15,6 @@ clearFormButton.addEventListener('click', clearGuessFields);
 
 function mainFormValidation() {
   const form = document.getElementById('guess-form');
-  const submitGuess = document.getElementById('submit-guess')
   if (form.checkValidity() === true) {
     submitGuess.removeAttribute('disabled');
     submitGuess.classList.remove('disabled');
@@ -36,17 +38,23 @@ function activateClearFormButton () {
 }
 
 function clearGuessFields () {
-  for (let i = 0; i < guessFields.length; i++) {
-    guessFields[i].value = '';
-  }
+  guessForm.reset();
+  disableGuessButtons();
+  event.preventDefault();
+}
+
+function disableGuessButtons () {
   clearFormButton.classList.add('disabled');
   clearFormButton.setAttribute('disabled', "");
+  submitGuess.classList.add('disabled');
+  submitGuess.setAttribute('disabled', "");
+  resetGame.classList.add('disabled');
+  resetGame.setAttribute('disabled', "");
 }
 
 gameplayCont.addEventListener('submit', pushFormData);
 
 function pushFormData() {
-  const form = document.querySelector('.main-game-form');
   const challengerOneName = document.getElementById('challenger-one-name-push');
   const challengerOneGuess = document.getElementById('challenger-one-guess-push');
   const challengerOneNameInput = document.getElementById('challenger-one-name');
@@ -59,7 +67,7 @@ function pushFormData() {
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
   challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
   challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
-  form.reset();
+  clearGuessFields();
   event.preventDefault();
 }
 
