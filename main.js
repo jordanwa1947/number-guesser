@@ -2,9 +2,12 @@ const bubbleParent = document.querySelector('main');
 
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
+const gameplayCont = document.getElementById('gameplay-cont');
+const rangeField = document.getElementById('range-field');
+
+const submitGuess = document.getElementById('submit-guess');
+const resetGame = document.getElementById('reset-game');
 const clearFormButton = document.getElementById('clear-form');
-const submitGuess = document.getElementById('submit-guess')
-const resetGame = document.getElementById('reset-game')
 
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
@@ -49,7 +52,7 @@ function disableGuessButtons () {
   resetGame.setAttribute('disabled', "");
 }
 
-bubbleParent.addEventListener('submit', pushFormData);
+gameplayCont.addEventListener('submit', pushFormData);
 
 function pushFormData() {
   const challengerOneName = document.getElementById('challenger-one-name-push');
@@ -66,4 +69,17 @@ function pushFormData() {
   challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
   clearGuessFields();
   event.preventDefault();
+}
+
+rangeField.addEventListener('submit', setRange)
+
+function setRange() {
+  const minRangeInput = document.getElementById("min-range-input");
+  const maxRangeInput = document.getElementById("max-range-input");
+  const minRange = document.getElementById("min-range-num");
+  const maxRange = document.getElementById("max-range-num");
+  minRange.innerHTML = minRangeInput.value;
+  maxRange.innerHTML = maxRangeInput.value;
+  event.preventDefault();
+  rangeField.reset();
 }
