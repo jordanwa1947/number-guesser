@@ -129,7 +129,7 @@ function insertGuessProximity (userOneProximity, userTwoProximity) {
 }
 
 function insertResultCard (firstUserName, secondUserName, winner) {
-  gameResultsColumn.insertAdjacentHTML('beforeend', `<section class="results-card">
+  gameResultsColumn.insertAdjacentHTML('afterbegin', `<section class="results-card">
     <div class="results-top">
       <span class="align-left bold">${firstUserName}</span>
       <span class="align-center">vs</span>
@@ -152,7 +152,7 @@ function insertResultCard (firstUserName, secondUserName, winner) {
 
 function deleteResultsCardOnClick () {
   const resultCards = gameResultsColumn.querySelectorAll('.results-card');
-  const lastResultCard = resultCards[resultCards.length - 1]
+  const lastResultCard = resultCards[0]
   const closeX = lastResultCard.querySelector('.close-button-circle');
   closeX.addEventListener('click', function () {
     lastResultCard.remove();
