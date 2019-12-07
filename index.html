@@ -18,10 +18,18 @@
           <span class="min-range">
             <label for"min-range">Min Range</label>
             <input type="text" name="min-range" class="range-input" id="min-range-input">
+            <span class="min-error">
+              <img class="error-icon" src="./assets/error-icon.svg"> </img>
+              <p class="pink error-message">Must be greater than max</p>
+            </span>
           </span>
           <span class="max-range">
             <label for"max-range">Max Range</label>
-            <input type="text" name="max-range" class="range-input" id="max-range-input">
+            <input type="text" name="max-range" class="range-input pink-border" id="max-range-input">
+            <span class="max-error">
+              <img class="error-icon" src="./assets/error-icon.svg"> </img>
+              <p class="pink error-message">Must be less than min</p>
+            </span>
           </span>
           <button class="bold disabled" type="submit">UPDATE</button>
         </form>
