@@ -263,6 +263,7 @@ Range form styling
 .range-input {
   width: 100%;
   font-size: 20px;
+  border: solid 2px rgb(241,241,241);
 }
 
 .set-range {
@@ -281,8 +282,7 @@ Range form styling
 
 .set-range button {
   vertical-align: bottom;
-  margin-left: 2.5%;
-  margin-bottom: 4%;
+  margin: 4% 2.5% 4% 0%;
   font-size: 15px;
   max-width: 150px;
   min-width: 100px;
@@ -296,6 +296,7 @@ Range form styling
 }
 
 .set-range {
+  height: 119px;
   margin-top: 2.5%;
   border: solid 2px rgb(241,241,241);
 }
@@ -312,16 +313,16 @@ Range form styling
 .set-range span span{
   white-space: nowrap;
   display: inline-block;
-  height: 18px;
+  height: 15px;
 }
 
 .error-message {
   display: inline-block;
-  margin: 1% 0%;
+  margin: 1.5% 0%;
 }
 
 .pink-border {
-  border: solid #dd1972;
+  border: solid 2px #dd1972;
 }
 
 /*
