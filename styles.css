@@ -105,6 +105,16 @@ header h3 {
   font-weight: 300;
 }
 
+.error-icon {
+  height: 10px;
+  width: 10px;
+}
+
+.error-message {
+  display: inline-block;
+  margin: 1% 0%;
+}
+
 
 /*
 General Classes Used in the Guess Card
@@ -245,16 +255,22 @@ End of Latest Guess Container
   background-color: #d0d2d3;
 }
 
+
+/*
+Range form styling
+ */
+
 .range-input {
   width: 100%;
   font-size: 20px;
+  border: solid 2px rgb(241,241,241);
 }
 
 .set-range {
   border: solid 0.5px #e4e4e4;
   margin-top: 5%;
   padding:  3% 2.5%;
-  box-shadow: 1px 1px 1px #e4e4e4;
+  padding-bottom:  0%;
   border-radius: 2px;
   font-size: 12px;
 }
@@ -266,8 +282,10 @@ End of Latest Guess Container
 
 .set-range button {
   vertical-align: bottom;
-  margin-left: 2.5%;
+  margin: 4% 2.5% 4% 0%;
   font-size: 15px;
+  max-width: 150px;
+  min-width: 100px;
 }
 
 .min-range,
@@ -277,13 +295,39 @@ End of Latest Guess Container
   margin-right: 2.5%;
 }
 
-.set-range input {
+.set-range {
+  height: 119px;
   margin-top: 2.5%;
+  border: solid 2px rgb(241,241,241);
 }
 
 .range-input label {
   display: block;
 }
+
+.error-icon {
+  height: 10px;
+  width: 10px;
+}
+
+.set-range span span{
+  white-space: nowrap;
+  display: inline-block;
+  height: 15px;
+}
+
+.error-message {
+  display: inline-block;
+  margin: 1.5% 0%;
+}
+
+.pink-border {
+  border: solid 2px #dd1972;
+}
+
+/*
+End of range form styling
+*/
 
 .results-card {
   background-color: #fff;
