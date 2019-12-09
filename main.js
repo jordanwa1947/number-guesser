@@ -94,6 +94,7 @@ function pushFormData() {
     challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
     challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
     removeGuessErrorMsgs();
+    clearGuessFields();
     event.preventDefault();
   } else {
     insertGuessErrorMsg(withinRange);
