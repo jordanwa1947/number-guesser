@@ -15,17 +15,21 @@
       <div class="left-column">
         <form id="range-field" class="set-range white">
           <h3>Set Range</h3>
-          <span class="min-range">
-            <label for"min-range">Min Range</label>
-            <input id="min-range-input" type="text" name="min-range" class="range-input">
-            <span id="min-error-cont" class="min-error"></span>
-          </span>
-          <span class="max-range">
-            <label for"max-range">Max Range</label>
-            <input id="max-range-input" type="text" name="max-range" class="range-input">
-            <span id="max-error-cont" class="max-error"></span>
-          </span>
-          <button id="update-range-button" class="bold disabled" type="submit">UPDATE</button>
+          <div class="set-range-row">
+            <span class="min-range">
+              <label for"min-range">Min Range</label>
+              <input id="min-range-input" type="text" name="min-range" class="range-input">
+              <span id="min-error-cont" class="min-error"></span>
+            </span>
+            <span class="max-range">
+              <label for"max-range">Max Range</label>
+              <input id="max-range-input" type="text" name="max-range" class="range-input">
+              <span id="max-error-cont" class="max-error"></span>
+            </span>
+            <span class="range-button">
+              <button id="update-range-button" class="bold disabled" type="submit">UPDATE</button>
+            </span>
+          </div>
         </form>
         <section class="gameplay-cont" id="gameplay-cont">
           <p class="current-range text"> The Current Range is <span class="range-numb bold" id="min-range-num">1</span> to <span class="range-numb bold" id="max-range-num">100</span> </p>
