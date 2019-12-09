@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
   </head>
@@ -33,37 +32,37 @@
             </span>
           </div>
         </form>
-        <section class="gameplay-cont" id="gameplay-cont">
-          <p class="current-range text"> The Current Range is <span class="range-numb bold" id="min-range-num">1</span> to <span class="range-numb bold" id="max-range-num">100</span> </p>
+        <section id="gameplay-cont" class="gameplay-cont" >
+          <p class="current-range text"> The Current Range is <span id="min-range-num" class="range-numb bold">1</span> to <span id="max-range-num" class="range-numb bold">100</span></p>
           <form id="guess-form" class="main-game-form">
-            <p class="bold challenger-title sub-head"> Challenger 1 </p>
+            <p class="bold challenger-title sub-head">Challenger 1</p>
             <section class="challenger-guess">
               <span class="name-field-cont">
-                <label for="challenger-one-name" class="text"> Name </label>
+                <label for="challenger-one-name" class="text">Name</label>
                 <input id="challenger-one-name" class="name-input" type="text" required>
               </span>
               <span class="guess-field-cont">
-                <label for="challenger-one-guess" class="text"> Guess </label>
+                <label for="challenger-one-guess" class="text">Guess</label>
                 <input id="challenger-one-guess" class="guess-input" type="text" required>
                 <div id="first-range-error-cont" class="error-cont"></div>
               </span>
             </section>
-            <p class="bold challenger sub-head"> Challenger 2 </p>
+            <p class="bold challenger sub-head">Challenger 2</p>
             <section class="challenger-guess">
               <span class="name-field-cont">
-                <label for="challenger-two-name" class="text"> Name </label>
+                <label for="challenger-two-name" class="text">Name</label>
                 <input id="challenger-two-name" class="name-input" type="text" required>
               </span>
               <span class="guess-field-cont">
-                <label for="challenger-two-guess" class="text"> Guess </label>
+                <label for="challenger-two-guess" class="text">Guess</label>
                 <input id="challenger-two-guess" class="guess-input" type="text" required>
                 <div id="second-range-error-cont" class="error-cont"></div>
               </span>
             </section>
             <div class="guess-button-cont">
-              <button class="bold disabled" disabled id="submit-guess">SUBMIT GUESS</button>
-              <button class="bold disabled" disabled id="reset-game">RESET GAME</button>
-              <button class="bold disabled" disabled id="clear-form">CLEAR FORM</button>
+              <button id="submit-guess" class="bold disabled" disabled>SUBMIT GUESS</button>
+              <button id="reset-game" class="bold disabled" disabled>RESET GAME</button>
+              <button id="clear-form" class="bold disabled" disabled>CLEAR FORM</button>
             </div>
           </form>
         </section>
@@ -71,17 +70,17 @@
           <p class="bold latest-guess-title"> Latest Guess </p>
           <div class="latest-guesses-cont">
             <span class="latest-guess-cont align-center">
-              <p class="bold challenger-name sub-head" id="challenger-one-name-push"> Challenger 1 Name </p>
-              <p class="current-guess sub-head"> current guess </p>
-              <div class="latest-guess" id="challenger-one-guess-push"> </div>
-              <p id="user-one-guess-result" class="guess-state"> No guesses yet! </p>
+              <p id="challenger-one-name-push" class="bold challenger-name sub-head" >Challenger 1 Name</p>
+              <p class="current-guess sub-head">current guess</p>
+              <div id="challenger-one-guess-push" class="latest-guess"></div>
+              <p id="user-one-guess-result" class="guess-state">No guesses yet!</p>
             </span>
             <div class="latest-guess-partition"></div>
             <span class="latest-guess-cont align-center">
-              <p class="bold challenger-name sub-head" id="challenger-two-name-push"> Challenger 2 Name </p>
+              <p id="challenger-two-name-push" class="bold challenger-name sub-head">Challenger 2 Name</p>
               <p class="current-guess sub-head"> current guess </p>
-              <div class="latest-guess" id="challenger-two-guess-push"> </div>
-              <p id="user-two-guess-result" class="guess-state"> No guesses yet! </p>
+              <div id="challenger-two-guess-push" class="latest-guess" ></div>
+              <p id="user-two-guess-result" class="guess-state">No guesses yet!</p>
             </span>
           </div>
         </section>
