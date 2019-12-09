@@ -123,7 +123,6 @@ arranged in order that they appear in the html
  */
 
 .left-column {
-  border: solid 1px black;
   flex-grow: 1;
   background-color: #f7f7f7;
   padding: 0 2.5%;
@@ -253,9 +252,8 @@ End of Latest Guess Container
  */
 
 .right-column {
-  flex-grow: 1;
   min-width: 400px;
-  border: solid 1px black;
+  width: 50vw;
   background-color: #d0d2d3;
 }
 
