@@ -80,29 +80,41 @@ function pushFormData() {
 rangeField.addEventListener('submit', setRange)
 
 function setRange() {
-  const minRangeInput = document.getElementById("min-range-input").value;
-  const maxRangeInput = document.getElementById("max-range-input").value;
-  const minRange = document.getElementById("min-range-num");
-  const maxRange = document.getElementById("max-range-num");
-  const minCont = document.getElementById('max-error-cont');
-  const maxInput = document.getElementById('max-range-input');
-  let minRangeValue = Number.parseInt(minRangeInput);
-  let maxRangeValue = Number.parseInt(maxRangeInput);
+  const minRangeInput = document.getElementById("min-range-input");
+  const maxRangeInput = document.getElementById("max-range-input");
+  const maxErrorCont = document.getElementById('max-error-cont');
+  let minRangeValue = Number.parseInt(minRangeInput.value);
+  let maxRangeValue = Number.parseInt(maxRangeInput.value);
   if (minRangeValue < maxRangeValue) {
-    minRange.innerHTML = minRangeInput;
-    maxRange.innerHTML = maxRangeInput;
+    setRangeHTML(maxRangeInput, minRangeInput);
     randNumb = generateRandomNumber(minRangeValue, maxRangeValue);
-    event.preventDefault();
+    removeRangeErrorMessage(maxRangeInput, maxErrorCont);
     rangeField.reset();
-    maxInput.classList.remove('pink-border');
-    minCont.innerHTML = '';
-  } else {
-    maxInput.classList.add('pink-border');
-    minCont.innerHTML = `<img class="error-icon" src="./assets/error-icon.svg"> </img>
-    <p class="pink error-message">Must be greater than min</p>`
     event.preventDefault();
+  } else {
+    rangeErrorMessage(maxRangeInput, maxErrorCont);
   }
 };
+
+function setRangeHTML(maxRangeInput, minRangeInput) {
+  const minRange = document.getElementById("min-range-num");
+  const maxRange = document.getElementById("max-range-num");
+  minRange.innerHTML = minRangeInput.value;
+  maxRange.innerHTML = maxRangeInput.value;
+}
+
+function removeRangeErrorMessage(maxRangeInput, maxErrorCont) {
+  maxRangeInput.classList.remove('pink-border');
+  maxErrorCont.innerHTML = '';
+}
+
+function rangeErrorMessage (maxInput, maxErrorCont) {
+  maxInput.classList.add('pink-border');
+  maxErrorCont.innerHTML = `
+  <img class="error-icon" src="./assets/error-icon.svg"> </img>
+  <p class="pink error-message">Must be greater than min</p>`
+  event.preventDefault();
+}
 
 function generateRandomNumber(min=0, max=100) {
   return Math.floor(Math.random() * (max - min) + min);
