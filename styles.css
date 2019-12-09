@@ -261,9 +261,8 @@ Range form styling
  */
 
 .range-input {
-  width: 100%;
-  font-size: 20px;
   border: solid 2px rgb(241,241,241);
+  padding: 6px;
 }
 
 .set-range {
@@ -275,30 +274,37 @@ Range form styling
   font-size: 12px;
 }
 
+.set-range-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2.5%;
+}
+
+.range-button {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-bottom: 5%;
+}
+
 .set-range h3 {
   font-size: 16px;
   margin-bottom: 1%;
 }
 
 .set-range button {
-  vertical-align: bottom;
-  margin: 4% 2.5% 4% 0%;
   font-size: 15px;
-  max-width: 150px;
   min-width: 70px;
+  padding: 5px 15px;
 }
 
 .min-range,
 .max-range {
-  display: inline-block;
-  width: 35%;
-  margin-right: 2.5%;
-}
-
-.set-range {
-  height: 119px;
-  margin-top: 2.5%;
-  border: solid 2px rgb(241,241,241);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 5%;
 }
 
 .range-input label {
@@ -311,9 +317,8 @@ Range form styling
 }
 
 .set-range span span{
-  white-space: nowrap;
-  display: inline-block;
-  height: 15px;
+  /* white-space: nowrap;
+  display: inline-block; */
 }
 
 .error-message {
