@@ -94,6 +94,7 @@ function pushFormData() {
     challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
     challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
     removeGuessErrorMsgs();
+    clearGuessFields();
     event.preventDefault();
   } else {
     insertGuessErrorMsg(withinRange);
@@ -136,8 +137,8 @@ function guessWithinRange (firstField, secondField) {
   let firstGuess = Number.parseInt(firstField.value);
   let secondGuess = Number.parseInt(secondField.value);
   return {
-    firstGuess: firstGuess > minRange && firstGuess < maxRange,
-    secondGuess: secondGuess > minRange && secondGuess < maxRange
+    firstGuess: firstGuess >= minRange && firstGuess <= maxRange,
+    secondGuess: secondGuess >= minRange && secondGuess <= maxRange
   }
 }
 
@@ -169,6 +170,8 @@ function setRange() {
     randNumb = generateRandomNumber(minRangeValue, maxRangeValue);
     removeErrorMsgs(maxRangeInput, maxErrorCont);
     rangeField.reset();
+    const updateRangeButton = document.getElementById('update-range-button');
+    updateRangeButton.classList.add('disabled');
     event.preventDefault();
   } else {
     insertErrorMessage(maxRangeInput, maxErrorCont, 'Must be greater than min');
