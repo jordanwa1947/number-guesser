@@ -272,20 +272,20 @@ Range form styling
   padding-bottom:  0%;
   border-radius: 2px;
   font-size: 12px;
-  border: solid 1px black;
 }
 
 .set-range-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 2.5%;
-  border: solid 1px black;
 }
 
 .range-button {
-  margin-top: 2.75%;
-  margin-right: 2.5%;
-  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-bottom: 5%;
 }
 
 .set-range h3 {
@@ -305,7 +305,6 @@ Range form styling
   flex-direction: column;
   flex-grow: 1;
   padding-right: 5%;
-  border: solid 1px black;
 }
 
 .range-input label {
@@ -318,8 +317,8 @@ Range form styling
 }
 
 .set-range span span{
-  white-space: nowrap;
-  display: inline-block;
+  /* white-space: nowrap;
+  display: inline-block; */
 }
 
 .error-message {
