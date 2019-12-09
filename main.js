@@ -136,8 +136,8 @@ function guessWithinRange (firstField, secondField) {
   let firstGuess = Number.parseInt(firstField.value);
   let secondGuess = Number.parseInt(secondField.value);
   return {
-    firstGuess: firstGuess > minRange && firstGuess < maxRange,
-    secondGuess: secondGuess > minRange && secondGuess < maxRange
+    firstGuess: firstGuess >= minRange && firstGuess <= maxRange,
+    secondGuess: secondGuess >= minRange && secondGuess <= maxRange
   }
 }
 
