@@ -19,9 +19,11 @@ bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
 
-function calcGameTime(start, stop) {
-  var time = start - stop;
-  console.log(time);
+function calcGameTime(stop, start) {
+  var seconds = Math.floor((stop - start) / 1000);
+  var minutes = Math.floor(seconds / 60);
+  console.log(`${minutes} MINUTES ${seconds} SECONDS`)
+  return `<strong>${minutes}</strong> MINUTES <strong>${seconds}</strong> SECONDS`;
 }
 
 function mainFormValidation() {
@@ -199,7 +201,6 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
     firstGuessProximity = `that's too low`
   } else if (firstGuess === randNumb) {
     timeStop = Date.now();
-    calcGameTime(timeStart, timeStop);
     firstGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, firstUserName);
     randNumb = generateRandomNumber();
@@ -211,7 +212,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
     secondGuessProximity = `that's too low`
   } else if (secondGuess === randNumb) {
     timeStop = Date.now();
-    calcGameTime(timeStart, timeStop);
+    calcGameTime(timeStop, timeStart);
     secondGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, secondUserName);
     randNumb = generateRandomNumber();
@@ -242,7 +243,7 @@ function insertResultCard (firstUserName, secondUserName, winner) {
     </hr>
     <div class="results-bottom">
       <span class="align-left"><strong>${guessCounter}</strong> GUESSES</span>
-      <span class="align-center"><strong>1</strong> MINUTE <strong>35</strong> SECONDS</span>
+      <span class="align-center">${calcGameTime(timeStop, timeStart)}</span>
       <span class="align-right"><span class="close-button-circle">&times;</span></span>
     </div>
   </section>`)
