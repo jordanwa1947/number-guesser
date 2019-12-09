@@ -18,6 +18,9 @@ const gameResultsColumn = document.getElementById('game-results-column');
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
+gameplayCont.addEventListener('submit', pushFormData);
+rangeField.addEventListener('submit', setRange);
+rangeField.addEventListener('input', toggleDisable);
 
 function stopTimer() {
   timeStop = Date.now();
@@ -73,8 +76,6 @@ function disableGuessButtons () {
   resetGame.classList.add('disabled');
   resetGame.setAttribute('disabled', "");
 }
-
-gameplayCont.addEventListener('submit', pushFormData);
 
 function pushFormData() {
   const challengerOneName = document.getElementById('challenger-one-name-push');
@@ -142,8 +143,6 @@ function guessWithinRange (firstField, secondField) {
   }
 }
 
-rangeField.addEventListener('input', toggleDisable);
-
 function toggleDisable() {
   const minRangeValue = document.getElementById("min-range-input").value;
   const maxRangeValue = document.getElementById("max-range-input").value;
@@ -156,8 +155,6 @@ function toggleDisable() {
     updateRangeButton.classList.add('disabled');
   }
 }
-
-rangeField.addEventListener('submit', setRange)
 
 function setRange() {
   const minRangeInput = document.getElementById("min-range-input");
