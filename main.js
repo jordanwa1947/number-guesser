@@ -187,6 +187,7 @@ function insertErrorMessage (input, errorCont, message) {
 }
 
 function generateRandomNumber(min=0, max=100) {
+  timeStart = Date.now();
   return Math.floor(Math.random() * (max - min) + min);
 }
 
