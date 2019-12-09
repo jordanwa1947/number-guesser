@@ -77,6 +77,21 @@ function pushFormData() {
   event.preventDefault();
 }
 
+rangeField.addEventListener('input', toggleDisable);
+
+function toggleDisable() {
+  const minRangeValue = document.getElementById("min-range-input").value;
+  const maxRangeValue = document.getElementById("max-range-input").value;
+  const updateRangeButton = document.getElementById('update-range-button');
+  const min = Number.parseInt(minRangeValue);
+  const max = Number.parseInt(maxRangeValue);
+  if (min < max && min || min == 0 && max || max == 0) {
+    updateRangeButton.classList.remove('disabled');
+  } else {
+    updateRangeButton.classList.add('disabled');
+  }
+}
+
 rangeField.addEventListener('submit', setRange)
 
 function setRange() {
