@@ -1,6 +1,8 @@
 const bubbleParent = document.querySelector('main');
 let randNumb = generateRandomNumber();
 let guessCounter = 0;
+var timeStart = Date.now();
+var timeStop = null;
 
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
@@ -16,6 +18,13 @@ const gameResultsColumn = document.getElementById('game-results-column');
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
+
+function calcGameTime(stop, start) {
+  var seconds = Math.floor((stop - start) / 1000);
+  var minutes = Math.floor(seconds / 60);
+  console.log(`${minutes} MINUTES ${seconds} SECONDS`)
+  return `<strong>${minutes}</strong> MINUTES <strong>${seconds}</strong> SECONDS`;
+}
 
 function mainFormValidation() {
   const form = document.getElementById('guess-form');
@@ -178,6 +187,7 @@ function insertErrorMessage (input, errorCont, message) {
 }
 
 function generateRandomNumber(min=0, max=100) {
+  timeStart = Date.now();
   return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -191,6 +201,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
   } else if (firstGuess < randNumb) {
     firstGuessProximity = `that's too low`
   } else if (firstGuess === randNumb) {
+    timeStop = Date.now();
     firstGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, firstUserName);
     randNumb = generateRandomNumber();
@@ -201,6 +212,8 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
   } else if (secondGuess < randNumb) {
     secondGuessProximity = `that's too low`
   } else if (secondGuess === randNumb) {
+    timeStop = Date.now();
+    calcGameTime(timeStop, timeStart);
     secondGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, secondUserName);
     randNumb = generateRandomNumber();
@@ -231,7 +244,7 @@ function insertResultCard (firstUserName, secondUserName, winner) {
     </hr>
     <div class="results-bottom">
       <span class="align-left"><strong>${guessCounter}</strong> GUESSES</span>
-      <span class="align-center"><strong>1</strong> MINUTE <strong>35</strong> SECONDS</span>
+      <span class="align-center">${calcGameTime(timeStop, timeStart)}</span>
       <span class="align-right"><span class="close-button-circle">&times;</span></span>
     </div>
   </section>`)
