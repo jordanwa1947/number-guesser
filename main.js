@@ -41,7 +41,7 @@ function activateClearFormButton () {
   }
 }
 
-function clearGuessFields () {
+function clearGuessFields() {
   guessForm.reset();
   disableGuessButtons();
   event.preventDefault();
@@ -120,6 +120,8 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
   } else if (firstGuess === randNumb) {
     firstGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, firstUserName);
+    randNumb = generateRandomNumber();
+    guessCounter = 0;
   }
   if (secondGuess > randNumb) {
     secondGuessProximity = `that's too high`
@@ -128,6 +130,8 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
   } else if (secondGuess === randNumb) {
     secondGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, secondUserName);
+    randNumb = generateRandomNumber();
+    guessCounter = 0;
   }
   insertGuessProximity(firstGuessProximity, secondGuessProximity);
 }
