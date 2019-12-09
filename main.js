@@ -68,13 +68,59 @@ function pushFormData() {
   const challengerTwoNameInput = document.getElementById('challenger-two-name');
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
   guessCounter += 2;
-  guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value, challengerOneNameInput.value, challengerTwoNameInput.value)
-  challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
-  challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
-  challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
-  challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
-  clearGuessFields();
-  event.preventDefault();
+  const withinRange = guessWithinRange(challengerOneGuessInput, challengerTwoGuessInput);
+  if (withinRange.firstGuess && withinRange.secondGuess) {
+    guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value, challengerOneNameInput.value, challengerTwoNameInput.value);
+    challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
+    challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
+    challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
+    challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
+    removeGuessErrorMsgs();
+    event.preventDefault();
+  } else {
+    insertGuessErrorMsg(withinRange);
+    event.preventDefault();
+  }
+}
+
+function removeGuessErrorMsgs () {
+  const firstErrorCont = document.getElementById('first-range-error-cont');
+  const secondErrorCont = document.getElementById('second-range-error-cont');
+  const firstGuessField = document.getElementById('challenger-one-guess');
+  const secondGuessField = document.getElementById('challenger-two-guess');
+  removeErrorMsgs(firstGuessField, firstErrorCont);
+  removeErrorMsgs(secondGuessField, secondErrorCont);
+}
+
+function insertGuessErrorMsg (withinRange) {
+  const firstErrorCont = document.getElementById('first-range-error-cont');
+  const secondErrorCont = document.getElementById('second-range-error-cont');
+  const firstGuessField = document.getElementById('challenger-one-guess');
+  const secondGuessField = document.getElementById('challenger-two-guess');
+  const errMsg = "Out of Range";
+  if (!withinRange.firstGuess && !withinRange.secondGuess) {
+    insertErrorMessage (firstGuessField, firstErrorCont, errMsg);
+    insertErrorMessage (secondGuessField, secondErrorCont, errMsg);
+  } else if (!withinRange.firstGuess) {
+    insertErrorMessage (firstGuessField, firstErrorCont, errMsg);
+    removeErrorMsgs(secondGuessField, secondErrorCont);
+  } else if (!withinRange.secondGuess) {
+    insertErrorMessage (secondGuessField, secondErrorCont, errMsg);
+    removeErrorMsgs(firstGuessField, firstErrorCont);
+  }
+}
+
+function guessWithinRange (firstField, secondField) {
+  const minRange = document.getElementById("min-range-num").innerText;
+  const maxRange = document.getElementById("max-range-num").innerText;
+  let minValue = Number.parseInt(minRange);
+  let maxValue = Number.parseInt(maxRange);
+  let firstGuess = Number.parseInt(firstField.value);
+  let secondGuess = Number.parseInt(secondField.value);
+  return {
+    firstGuess: firstGuess > minRange && firstGuess < maxRange,
+    secondGuess: secondGuess > minRange && secondGuess < maxRange
+  }
 }
 
 rangeField.addEventListener('input', toggleDisable);
@@ -103,11 +149,11 @@ function setRange() {
   if (minRangeValue < maxRangeValue) {
     setRangeHTML(maxRangeInput, minRangeInput);
     randNumb = generateRandomNumber(minRangeValue, maxRangeValue);
-    removeRangeErrorMessage(maxRangeInput, maxErrorCont);
+    removeErrorMsgs(maxRangeInput, maxErrorCont);
     rangeField.reset();
     event.preventDefault();
   } else {
-    rangeErrorMessage(maxRangeInput, maxErrorCont);
+    insertErrorMessage(maxRangeInput, maxErrorCont, 'Must be greater than min');
   }
 };
 
@@ -118,16 +164,16 @@ function setRangeHTML(maxRangeInput, minRangeInput) {
   maxRange.innerHTML = maxRangeInput.value;
 }
 
-function removeRangeErrorMessage(maxRangeInput, maxErrorCont) {
-  maxRangeInput.classList.remove('pink-border');
-  maxErrorCont.innerHTML = '';
+function removeErrorMsgs(input, errorCont) {
+  input.classList.remove('pink-border');
+  errorCont.innerHTML = '';
 }
 
-function rangeErrorMessage (maxInput, maxErrorCont) {
-  maxInput.classList.add('pink-border');
-  maxErrorCont.innerHTML = `
+function insertErrorMessage (input, errorCont, message) {
+  input.classList.add('pink-border');
+  errorCont.innerHTML = `
   <img class="error-icon" src="./assets/error-icon.svg"> </img>
-  <p class="pink error-message">Must be greater than min</p>`
+  <p class="pink error-message">${message}</p>`
   event.preventDefault();
 }
 
