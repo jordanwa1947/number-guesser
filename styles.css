@@ -124,9 +124,9 @@ arranged in order that they appear in the html
  */
 
 .left-column {
-  flex-grow: 1;
+  flex: 1;
+  min-width: 300px;
   background-color: #f7f7f7;
-  padding: 0 2.5%;
   padding-bottom: 2.5%;
  }
 
@@ -135,6 +135,8 @@ arranged in order that they appear in the html
   background-color: white;
   border: solid 2px rgb(238,238,238);
   margin-top: 15px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
 .challenger {
@@ -201,6 +203,8 @@ Latest Guess Container
   padding: 10px;
   border: solid 2px rgb(238,238,238);
   margin-top: 15px;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
   height: 230px;
 }
 
@@ -253,8 +257,8 @@ End of Latest Guess Container
  */
 
 .right-column {
-  min-width: 400px;
-  width: 50vw;
+  flex: 1;
+  min-width: 300px;
   background-color: #d0d2d3;
 }
 
@@ -270,6 +274,8 @@ Range form styling
 
 .set-range {
   border: solid 0.5px #e4e4e4;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
   margin-top: 5%;
   padding:  3% 2.5%;
   padding-bottom:  0%;
