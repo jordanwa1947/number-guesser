@@ -1,6 +1,8 @@
 const bubbleParent = document.querySelector('main');
 let randNumb = generateRandomNumber();
 let guessCounter = 0;
+var timeStart = Date.now();
+var timeStop = null;
 
 const guessForm = document.getElementById('guess-form');
 const guessFields = document.querySelectorAll('#guess-form input');
@@ -191,6 +193,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
   } else if (firstGuess < randNumb) {
     firstGuessProximity = `that's too low`
   } else if (firstGuess === randNumb) {
+    timeStop = Date.now();
     firstGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, firstUserName);
     randNumb = generateRandomNumber();
@@ -201,6 +204,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
   } else if (secondGuess < randNumb) {
     secondGuessProximity = `that's too low`
   } else if (secondGuess === randNumb) {
+    timeStop = Date.now();
     secondGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, secondUserName);
     randNumb = generateRandomNumber();
