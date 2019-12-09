@@ -160,6 +160,8 @@ function setRange() {
     randNumb = generateRandomNumber(minRangeValue, maxRangeValue);
     removeErrorMsgs(maxRangeInput, maxErrorCont);
     rangeField.reset();
+    const updateRangeButton = document.getElementById('update-range-button');
+    updateRangeButton.classList.add('disabled');
     event.preventDefault();
   } else {
     insertErrorMessage(maxRangeInput, maxErrorCont, 'Must be greater than min');
