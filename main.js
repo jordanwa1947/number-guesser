@@ -25,7 +25,7 @@ function stopTimer() {
 
 function resetTimer() {
   timeStart = Date.now();
-  var timeStop = null;
+  timeStop = null;
 }
 
 function calcGameTime(stop, start) {
