@@ -19,10 +19,14 @@ bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
 
+function stopTimer() {
+  timeStop = Date.now();
+}
+
 function calcGameTime(stop, start) {
   var seconds = Math.floor((stop - start) / 1000);
   var minutes = Math.floor(seconds / 60);
-  console.log(`${minutes} MINUTES ${seconds} SECONDS`)
+  timeStop = null;
   return `<strong>${minutes}</strong> MINUTES <strong>${seconds}</strong> SECONDS`;
 }
 
@@ -201,7 +205,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
   } else if (firstGuess < randNumb) {
     firstGuessProximity = `that's too low`
   } else if (firstGuess === randNumb) {
-    timeStop = Date.now();
+    stopTimer();
     firstGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, firstUserName);
     randNumb = generateRandomNumber();
@@ -212,8 +216,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
   } else if (secondGuess < randNumb) {
     secondGuessProximity = `that's too low`
   } else if (secondGuess === randNumb) {
-    timeStop = Date.now();
-    calcGameTime(timeStop, timeStart);
+    stopTimer();
     secondGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, secondUserName);
     randNumb = generateRandomNumber();
