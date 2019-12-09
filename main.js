@@ -23,6 +23,11 @@ function stopTimer() {
   timeStop = Date.now();
 }
 
+function resetTimer() {
+  timeStart = Date.now();
+  var timeStop = null;
+}
+
 function calcGameTime(stop, start) {
   var seconds = Math.floor((stop - start) / 1000);
   var minutes = Math.floor(seconds / 60);
@@ -191,7 +196,6 @@ function insertErrorMessage (input, errorCont, message) {
 }
 
 function generateRandomNumber(min=0, max=100) {
-  timeStart = Date.now();
   return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -209,6 +213,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
     firstGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, firstUserName);
     randNumb = generateRandomNumber();
+    resetTimer();
     guessCounter = 0;
   }
   if (secondGuess > randNumb) {
@@ -220,6 +225,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
     secondGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, secondUserName);
     randNumb = generateRandomNumber();
+    resetTimer();
     guessCounter = 0;
   }
   insertGuessProximity(firstGuessProximity, secondGuessProximity);
