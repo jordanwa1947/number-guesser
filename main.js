@@ -18,7 +18,7 @@ const gameResultsColumn = document.getElementById('game-results-column');
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
-gameplayCont.addEventListener('submit', pushFormData);
+gameplayCont.addEventListener('submit', displayFormData);
 rangeField.addEventListener('submit', setRange);
 rangeField.addEventListener('input', toggleDisable);
 
@@ -81,7 +81,7 @@ function incrementGuessCounter() {
   guessCounter += 2;
 }
 
-function pushFormData() {
+function displayFormData() {
   const challengerOneName = document.getElementById('challenger-one-name-push');
   const challengerOneGuess = document.getElementById('challenger-one-guess-push');
   const challengerOneNameInput = document.getElementById('challenger-one-name');
