@@ -81,17 +81,24 @@ function incrementGuessCounter() {
   guessCounter += 2;
 }
 
+// function getChallengerOneName() {
+//   const challengerOneName = document.getElementById('challenger-one-name-push');
+//   const challengerOneGuess = document.getElementById('challenger-one-guess-push');
+//   const challengerOneNameInput = document.getElementById('challenger-one-name');
+//   const challengerOneGuessInput = document.getElementById('challenger-one-guess');
+// }
+
 function displayFormData() {
-  const challengerOneName = document.getElementById('challenger-one-name-push');
-  const challengerOneGuess = document.getElementById('challenger-one-guess-push');
+  const challengerOneName = document.getElementById('challenger-one-name-display');
+  const challengerOneGuess = document.getElementById('challenger-one-guess-display');
   const challengerOneNameInput = document.getElementById('challenger-one-name');
   const challengerOneGuessInput = document.getElementById('challenger-one-guess');
-  const challengerTwoName = document.getElementById('challenger-two-name-push');
-  const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
+  const challengerTwoName = document.getElementById('challenger-two-name-display');
+  const challengerTwoGuess = document.getElementById('challenger-two-guess-display');
   const challengerTwoNameInput = document.getElementById('challenger-two-name');
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
-  incrementGuessCounter();
   const withinRange = guessWithinRange(challengerOneGuessInput, challengerTwoGuessInput);
+  incrementGuessCounter();
   if (withinRange.firstGuess && withinRange.secondGuess) {
     guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value, challengerOneNameInput.value, challengerTwoNameInput.value);
     challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
