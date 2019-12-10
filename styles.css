@@ -114,11 +114,11 @@ main {
 }
 
 /*
-End global document styles
+End of global document styles
 */
 
 /*
-Styles for page header
+Page header styles
 */
 
 header h1 {
@@ -147,143 +147,8 @@ header h3 {
 }
 
 /*
-End styles for header
+End of header styles
 */
-
-
-/*
-Styles for main gameplay card
- */
-
- .challenger {
-   margin-top: 4px;
- }
-
- .challenger-guess {
-   display: block;
-   display: flex;
- }
-
- .challenger-guess span label{
-   display: block;
- }
-
- .challenger-guess span input{
-   padding: 6px;
-   border: solid 2px rgb(241,241,241);
-   width: 94.6%;
- }
-
- .current-range {
-   margin-bottom: 15px;
- }
-
-.gameplay-cont {
-  padding: 10px;
-  background-color: white;
-  border: solid 2px rgb(238,238,238);
-  margin-top: 15px;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-}
-
-.guess-button-cont {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.guess-button-cont button {
-  flex-grow: 1;
-  margin: 2.5%;
-}
-
-.guess-field-cont {
-  width: 36.6%;
-}
-
-.name-field-cont {
-  width: 63.4%;
-}
-
-.name-input {
-  margin-right: 14px;
-}
-
-.range-numb {
-  text-decoration: underline;
-}
-
-/*
-End of guess section
- */
-
-
- /*
-Latest guess container
-*/
-
-.challenger-guess-number {
-  margin-top: 2.5%;
-}
-
-.current-guess {
-}
-
-.challenger-name {
-  font-size: 20px;
-  color: #808080;
-  margin-bottom: 2.5%;
-}
-
-.error-cont {
-  height: 26px;
-  padding-left: 3px;
-}
-
-.guess-state {
-  font-size: 18px;
-}
-
-.latest-guess {
-  height: 80px;
-  color: #dd1972;
-  font-weight: bolder;
-  font-size: 45px;
-}
-
-.latest-guesses {
-  padding: 10px;
-  border: solid 2px rgb(238,238,238);
-  margin-top: 15px;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  height: 230px;
-}
-
-.latest-guesses-cont {
-  display: flex;
-}
-
-.latest-guess-cont {
-  width: 100%;
-}
-
-.latest-guess-partition {
-  border-left: 1px solid #d0d2d3;
-  height: 190px;
-  bottom: 25px;
-  position: relative;
-}
-
-.latest-guess-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-/*
-End of latest guess container
- */
 
 /*
 Set range form styles
@@ -353,8 +218,142 @@ Set range form styles
 }
 
 /*
-End of range form styling
+End of range form styles
 */
+
+/*
+Main gameplay card styles
+ */
+
+ .challenger {
+   margin-top: 4px;
+ }
+
+ .challenger-guess {
+   display: block;
+   display: flex;
+ }
+
+ .challenger-guess span label{
+   display: block;
+ }
+
+ .challenger-guess span input{
+   padding: 6px;
+   border: solid 2px rgb(241,241,241);
+   width: 94.6%;
+ }
+
+ .current-range {
+   margin-bottom: 15px;
+ }
+
+.gameplay-cont {
+  padding: 10px;
+  background-color: white;
+  border: solid 2px rgb(238,238,238);
+  margin-top: 15px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.guess-button-cont {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.guess-button-cont button {
+  flex-grow: 1;
+  margin: 2.5%;
+}
+
+.guess-field-cont {
+  width: 36.6%;
+}
+
+.name-field-cont {
+  width: 63.4%;
+}
+
+.name-input {
+  margin-right: 14px;
+}
+
+.range-numb {
+  text-decoration: underline;
+}
+
+/*
+End of main gameplay card styles
+ */
+
+
+ /*
+Latest guess card styles
+*/
+
+.challenger-guess-number {
+  margin-top: 2.5%;
+}
+
+.current-guess {
+}
+
+.challenger-name {
+  font-size: 20px;
+  color: #808080;
+  margin-bottom: 2.5%;
+}
+
+.error-cont {
+  height: 26px;
+  padding-left: 3px;
+}
+
+.guess-state {
+  font-size: 18px;
+}
+
+.latest-guess {
+  height: 80px;
+  color: #dd1972;
+  font-weight: bolder;
+  font-size: 45px;
+}
+
+.latest-guesses {
+  padding: 10px;
+  border: solid 2px rgb(238,238,238);
+  margin-top: 15px;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  height: 230px;
+}
+
+.latest-guesses-cont {
+  display: flex;
+}
+
+.latest-guess-cont {
+  width: 100%;
+}
+
+.latest-guess-partition {
+  border-left: 1px solid #d0d2d3;
+  height: 190px;
+  bottom: 25px;
+  position: relative;
+}
+
+.latest-guess-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/*
+End of latest guess card styles
+ */
 
 /*
 Results card styles
@@ -419,5 +418,5 @@ Results card styles
 }
 
 /*
-End results card styles
+End of results card styles
 */
