@@ -268,14 +268,12 @@ function insertResultCard (firstUserName, secondUserName, winner) {
       <span class="align-right"><span class="close-button-circle">&times;</span></span>
     </div>
   </section>`)
-  deleteResultsCardOnClick();
 }
 
+gameResultsColumn.addEventListener('click', deleteResultsCardOnClick)
+
 function deleteResultsCardOnClick () {
-  const resultCards = gameResultsColumn.querySelectorAll('.results-card');
-  const lastResultCard = resultCards[0]
-  const closeX = lastResultCard.querySelector('.close-button-circle');
-  closeX.addEventListener('click', function () {
-    lastResultCard.remove();
-  })
+  if(event.target.className === 'close-button-circle') {
+    event.target.parentElement.parentElement.parentElement.remove();
+  }
 }
