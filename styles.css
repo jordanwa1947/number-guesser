@@ -137,8 +137,8 @@ header h3 {
 }
 
 .header-ruler {
-  width: 45px;
   margin: 5px 10px;
+  width: 45px;
 }
 
 .header-ruler,
@@ -175,8 +175,8 @@ Set range form styles
  .range-button {
    display: flex;
    flex-direction: column;
-   margin-top: 16px;
    margin-bottom: 5%;
+   margin-top: 16px;
  }
 
 .range-input {
@@ -190,13 +190,13 @@ Set range form styles
 
 .set-range {
   border: solid 0.5px #e4e4e4;
-  margin-right: 2.5%;
+  border-radius: 2px;
+  font-size: 12px;
   margin-left: 2.5%;
+  margin-right: 2.5%;
   margin-top: 5%;
   padding:  3% 2.5%;
   padding-bottom:  0%;
-  border-radius: 2px;
-  font-size: 12px;
 }
 
 .set-range button {
@@ -230,7 +230,6 @@ Main gameplay card styles
  }
 
  .challenger-guess {
-   display: block;
    display: flex;
  }
 
@@ -239,8 +238,8 @@ Main gameplay card styles
  }
 
  .challenger-guess span input{
-   padding: 6px;
    border: solid 2px rgb(241,241,241);
+   padding: 6px;
    width: 94.6%;
  }
 
@@ -249,18 +248,18 @@ Main gameplay card styles
  }
 
 .gameplay-cont {
-  padding: 10px;
   background-color: white;
   border: solid 2px rgb(238,238,238);
-  margin-top: 15px;
   margin-left: 2.5%;
   margin-right: 2.5%;
+  margin-top: 15px;
+  padding: 10px;
 }
 
 .guess-button-cont {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .guess-button-cont button {
@@ -297,12 +296,9 @@ Latest guess card styles
   margin-top: 2.5%;
 }
 
-.current-guess {
-}
-
 .challenger-name {
-  font-size: 20px;
   color: #808080;
+  font-size: 20px;
   margin-bottom: 2.5%;
 }
 
@@ -316,19 +312,19 @@ Latest guess card styles
 }
 
 .latest-guess {
-  height: 80px;
   color: #dd1972;
   font-weight: bolder;
   font-size: 45px;
+  height: 80px;
 }
 
 .latest-guesses {
-  padding: 10px;
   border: solid 2px rgb(238,238,238);
-  margin-top: 15px;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
   height: 230px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 15px;
+  padding: 10px;
 }
 
 .latest-guesses-cont {
@@ -341,8 +337,8 @@ Latest guess card styles
 
 .latest-guess-partition {
   border-left: 1px solid #d0d2d3;
-  height: 190px;
   bottom: 25px;
+  height: 190px;
   position: relative;
 }
 
@@ -361,12 +357,11 @@ Results card styles
 
 .close-button-circle {
   background-color: #6e6e6e;
-  padding: 1% 5%;
   border-radius: 50%;
   color: #fff;
-  font-size: 20px;
   font-weight: bold;
-  border: none;
+  font-size: 20px;
+  padding: 1% 5%;
 }
 
 .results-bottom {
@@ -381,11 +376,11 @@ Results card styles
 
 .results-card {
   background-color: #fff;
-  margin: 2.5%;
-  border-radius: 2.5px;
   border: solid 0.5px gray;
+  border-radius: 2.5px;
   color: #6e6e6e;
   font-size: 16.5px;
+  margin: 2.5%;
 }
 
 .results-card hr {
@@ -393,9 +388,9 @@ Results card styles
 }
 
 .results-middle {
-  text-align: center;
-  padding: 2.5% 0;
   font-size: 15px;
+  padding: 2.5% 0;
+  text-align: center;
 }
 
 .results-middle h2 {
