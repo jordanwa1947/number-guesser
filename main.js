@@ -15,6 +15,15 @@ const clearFormButton = document.getElementById('clear-form');
 
 const gameResultsColumn = document.getElementById('game-results-column');
 
+const challengerOneName = document.getElementById('challenger-one-name-display');
+const challengerOneGuess = document.getElementById('challenger-one-guess-display');
+const challengerOneNameInput = document.getElementById('challenger-one-name');
+const challengerOneGuessInput = document.getElementById('challenger-one-guess');
+const challengerTwoName = document.getElementById('challenger-two-name-display');
+const challengerTwoGuess = document.getElementById('challenger-two-guess-display');
+const challengerTwoNameInput = document.getElementById('challenger-two-name');
+const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
+
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
@@ -82,14 +91,6 @@ function incrementGuessCounter() {
 }
 
 function displayFormData() {
-  const challengerOneName = document.getElementById('challenger-one-name-display');
-  const challengerOneGuess = document.getElementById('challenger-one-guess-display');
-  const challengerOneNameInput = document.getElementById('challenger-one-name');
-  const challengerOneGuessInput = document.getElementById('challenger-one-guess');
-  const challengerTwoName = document.getElementById('challenger-two-name-display');
-  const challengerTwoGuess = document.getElementById('challenger-two-guess-display');
-  const challengerTwoNameInput = document.getElementById('challenger-two-name');
-  const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
   const withinRange = guessWithinRange(challengerOneGuessInput, challengerTwoGuessInput);
   incrementGuessCounter();
   if (withinRange.firstGuess && withinRange.secondGuess) {
