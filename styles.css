@@ -1,3 +1,18 @@
+/* CSS Categories are ordered as follows:
+
+- Reset
+- General re-useable styles
+- Global document styles
+- Remainder of categories are ordered as they appear on-screen,
+  from top > bottom and left > right
+
+CSS rules are ordered alphabetically within categories
+CSS declarations are ordered alphabetically within rules */
+
+/*
+CSS Reset
+*/
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4,
 h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
 cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
