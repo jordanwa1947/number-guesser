@@ -95,10 +95,7 @@ function displayFormData() {
   incrementGuessCounter();
   if (withinRange.firstGuess && withinRange.secondGuess) {
     guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value, challengerOneNameInput.value, challengerTwoNameInput.value);
-    challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
-    challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
-    challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
-    challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
+    displayGuessHtml();
     removeGuessErrorMsgs();
     clearGuessFields();
     event.preventDefault();
@@ -106,6 +103,13 @@ function displayFormData() {
     insertGuessErrorMsg(withinRange);
     event.preventDefault();
   }
+}
+
+function displayGuessHtml() {
+  challengerOneName.innerHTML = `<span>${challengerOneNameInput.value}</span>`;
+  challengerOneGuess.innerHTML = `<p class="challenger-guess-number">${challengerOneGuessInput.value}</p>`;
+  challengerTwoName.innerHTML = `<span>${challengerTwoNameInput.value}</span>`;
+  challengerTwoGuess.innerHTML = `<p class="challenger-guess-number">${challengerTwoGuessInput.value}</p>`;
 }
 
 function removeGuessErrorMsgs () {
