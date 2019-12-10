@@ -169,16 +169,6 @@ End of header styles
 Set range form styles
  */
 
- .error-icon {
-   height: 10px;
-   width: 10px;
- }
-
- .error-message {
-   display: inline-block;
-   margin: 1.5% 0%;
- }
-
  .min-range,
  .max-range {
    display: flex;
