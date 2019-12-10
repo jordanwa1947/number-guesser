@@ -143,6 +143,16 @@ function guessWithinRange (firstField, secondField) {
   }
 }
 
+function updateRange () {
+  const minRange = document.getElementById("min-range-num");
+  const maxRange = document.getElementById("max-range-num");
+  const newMin = Number.parseInt(minRange.innerText) - 10;
+  const newMax = Number.parseInt(maxRange.innerText) + 10;
+  minRange.innerText = newMin;
+  maxRange.innerText = newMax;
+  randNumb = generateRandomNumber(newMin, newMax);
+}
+
 function toggleDisable() {
   const minRangeValue = document.getElementById("min-range-input").value;
   const maxRangeValue = document.getElementById("max-range-input").value;
@@ -212,7 +222,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
     stopTimer();
     firstGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, firstUserName);
-    randNumb = generateRandomNumber();
+    updateRange();
     resetTimer();
     guessCounter = 0;
   }
@@ -225,6 +235,7 @@ function guessComparison (firstUserGuess, secondUserGuess, firstUserName, second
     secondGuessProximity = 'BOOM!'
     insertResultCard(firstUserName, secondUserName, secondUserName);
     randNumb = generateRandomNumber();
+    updateRange();
     resetTimer();
     guessCounter = 0;
   }
