@@ -81,13 +81,6 @@ function incrementGuessCounter() {
   guessCounter += 2;
 }
 
-// function getChallengerOneName() {
-//   const challengerOneName = document.getElementById('challenger-one-name-push');
-//   const challengerOneGuess = document.getElementById('challenger-one-guess-push');
-//   const challengerOneNameInput = document.getElementById('challenger-one-name');
-//   const challengerOneGuessInput = document.getElementById('challenger-one-guess');
-// }
-
 function displayFormData() {
   const challengerOneName = document.getElementById('challenger-one-name-display');
   const challengerOneGuess = document.getElementById('challenger-one-guess-display');
