@@ -77,6 +77,10 @@ function disableGuessButtons () {
   resetGame.setAttribute('disabled', "");
 }
 
+function incrementGuessCounter() {
+  guessCounter += 2;
+}
+
 function pushFormData() {
   const challengerOneName = document.getElementById('challenger-one-name-push');
   const challengerOneGuess = document.getElementById('challenger-one-guess-push');
@@ -86,7 +90,7 @@ function pushFormData() {
   const challengerTwoGuess = document.getElementById('challenger-two-guess-push');
   const challengerTwoNameInput = document.getElementById('challenger-two-name');
   const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
-  guessCounter += 2;
+  incrementGuessCounter();
   const withinRange = guessWithinRange(challengerOneGuessInput, challengerTwoGuessInput);
   if (withinRange.firstGuess && withinRange.secondGuess) {
     guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value, challengerOneNameInput.value, challengerTwoNameInput.value);
