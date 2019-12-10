@@ -3,22 +3,43 @@ h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
 cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b, u, i, center, dl,
 dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    vertical-align: baseline;
-    background: transparent;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
 
 * {
-  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /*
 General Styles for re-use
  */
+
+ .align-center {
+   text-align: center;
+ }
+
+ .align-left {
+   text-align: left;
+ }
+
+ .align-right {
+   text-align: right;
+ }
+
+ .bold {
+   font-weight: bold;
+ }
+
+ .disabled {
+   background-color: #d0d2d3;
+   border-color: rgb(220,221,221);
+ }
 
 .pink {
   color: #dd1972;
@@ -28,37 +49,16 @@ General Styles for re-use
   border: solid 2px #dd1972;
 }
 
-.white {
-  background-color: #fff;
-}
-
-.bold {
-  font-weight: bold;
+.sub-head {
+  font-size: 16px;
 }
 
 .text {
   font-size: .8em;
 }
 
-.sub-head {
-  font-size: 16px;
-}
-
-.disabled {
-  background-color: #d0d2d3;
-  border-color: rgb(220,221,221);
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
+.white {
+  background-color: #fff;
 }
 
 /*
@@ -70,11 +70,11 @@ Global styles for document elements
 */
 
 button {
-  padding: 1% 2.5%;
-  border-radius: 20px;
-  font-size: 15px;
   background-color: rgb(127,127,127);
+  border-radius: 20px;
   color: #fff;
+  font-size: 15px;
+  padding: 1% 2.5%;
 }
 
 .error-icon {
@@ -84,21 +84,21 @@ button {
 
 .error-message {
   display: inline-block;
-  margin: 1% 0%;
   font-size: 12px;
+  margin: 1% 0%;
 }
 
 header {
-  text-align: center;
   background-color: #404041;
   color: #fff;
   padding: 1.5%;
+  text-align: center;
 }
 
 .left-column {
+  background-color: #f7f7f7;
   flex: 1;
   min-width: 300px;
-  background-color: #f7f7f7;
   padding-bottom: 2.5%;
  }
 
@@ -108,9 +108,9 @@ main {
 }
 
 .right-column {
+  background-color: #d0d2d3;
   flex: 1;
   min-width: 300px;
-  background-color: #d0d2d3;
 }
 
 /*
