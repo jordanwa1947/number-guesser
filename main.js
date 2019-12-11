@@ -1,28 +1,28 @@
-const bubbleParent = document.querySelector('main');
-let randNumb = generateRandomNumber();
-let guessCounter = 0;
+var bubbleParent = document.querySelector('main');
+var randNumb = generateRandomNumber();
+var guessCounter = 0;
 var timeStart = Date.now();
 var timeStop = null;
 
-const guessForm = document.getElementById('guess-form');
-const guessFields = document.querySelectorAll('#guess-form input');
-const gameplayCont = document.getElementById('gameplay-cont');
-const rangeField = document.getElementById('range-field');
+var guessForm = document.getElementById('guess-form');
+var guessFields = document.querySelectorAll('#guess-form input');
+var gameplayCont = document.getElementById('gameplay-cont');
+var rangeField = document.getElementById('range-field');
 
-const submitGuess = document.getElementById('submit-guess');
-const resetGame = document.getElementById('reset-game');
-const clearFormButton = document.getElementById('clear-form');
+var submitGuess = document.getElementById('submit-guess');
+var resetGame = document.getElementById('reset-game');
+var clearFormButton = document.getElementById('clear-form');
 
-const gameResultsColumn = document.getElementById('game-results-column');
+var gameResultsColumn = document.getElementById('game-results-column');
 
-const challengerOneName = document.getElementById('challenger-one-name-display');
-const challengerOneGuess = document.getElementById('challenger-one-guess-display');
-const challengerOneNameInput = document.getElementById('challenger-one-name');
-const challengerOneGuessInput = document.getElementById('challenger-one-guess');
-const challengerTwoName = document.getElementById('challenger-two-name-display');
-const challengerTwoGuess = document.getElementById('challenger-two-guess-display');
-const challengerTwoNameInput = document.getElementById('challenger-two-name');
-const challengerTwoGuessInput = document.getElementById('challenger-two-guess');
+var challengerOneName = document.getElementById('challenger-one-name-display');
+var challengerOneGuess = document.getElementById('challenger-one-guess-display');
+var challengerOneNameInput = document.getElementById('challenger-one-name');
+var challengerOneGuessInput = document.getElementById('challenger-one-guess');
+var challengerTwoName = document.getElementById('challenger-two-name-display');
+var challengerTwoGuess = document.getElementById('challenger-two-guess-display');
+var challengerTwoNameInput = document.getElementById('challenger-two-name');
+var challengerTwoGuessInput = document.getElementById('challenger-two-guess');
 
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
@@ -48,7 +48,7 @@ function calcGameTime(stop, start) {
 }
 
 function mainFormValidation() {
-  const form = document.getElementById('guess-form');
+  var form = document.getElementById('guess-form');
   if (form.checkValidity() === true) {
     submitGuess.removeAttribute('disabled');
     submitGuess.classList.remove('disabled');
@@ -59,7 +59,7 @@ function mainFormValidation() {
 }
 
 function activateClearFormButton () {
-  for (let i = 0; i < guessFields.length; i++) {
+  for (var i = 0; i < guessFields.length; i++) {
     if (guessFields[i].value !== '') {
       clearFormButton.removeAttribute('disabled');
       clearFormButton.classList.remove('disabled');
@@ -91,7 +91,7 @@ function incrementGuessCounter() {
 }
 
 function displayFormData() {
-  const withinRange = guessWithinRange(challengerOneGuessInput, challengerTwoGuessInput);
+  var withinRange = guessWithinRange(challengerOneGuessInput, challengerTwoGuessInput);
   incrementGuessCounter();
   if (withinRange.firstGuess && withinRange.secondGuess) {
     guessComparison(challengerOneGuessInput.value, challengerTwoGuessInput.value, challengerOneNameInput.value, challengerTwoNameInput.value);
@@ -113,20 +113,20 @@ function displayGuessHtml() {
 }
 
 function removeGuessErrorMsgs () {
-  const firstErrorCont = document.getElementById('first-range-error-cont');
-  const secondErrorCont = document.getElementById('second-range-error-cont');
-  const firstGuessField = document.getElementById('challenger-one-guess');
-  const secondGuessField = document.getElementById('challenger-two-guess');
+  var firstErrorCont = document.getElementById('first-range-error-cont');
+  var secondErrorCont = document.getElementById('second-range-error-cont');
+  var firstGuessField = document.getElementById('challenger-one-guess');
+  var secondGuessField = document.getElementById('challenger-two-guess');
   removeErrorMsgs(firstGuessField, firstErrorCont);
   removeErrorMsgs(secondGuessField, secondErrorCont);
 }
 
 function insertGuessErrorMsg (withinRange) {
-  const firstErrorCont = document.getElementById('first-range-error-cont');
-  const secondErrorCont = document.getElementById('second-range-error-cont');
-  const firstGuessField = document.getElementById('challenger-one-guess');
-  const secondGuessField = document.getElementById('challenger-two-guess');
-  const errMsg = "Out of Range";
+  var firstErrorCont = document.getElementById('first-range-error-cont');
+  var secondErrorCont = document.getElementById('second-range-error-cont');
+  var firstGuessField = document.getElementById('challenger-one-guess');
+  var secondGuessField = document.getElementById('challenger-two-guess');
+  var errMsg = "Out of Range";
   if (!withinRange.firstGuess && !withinRange.secondGuess) {
     insertErrorMessage (firstGuessField, firstErrorCont, errMsg);
     insertErrorMessage (secondGuessField, secondErrorCont, errMsg);
@@ -140,12 +140,12 @@ function insertGuessErrorMsg (withinRange) {
 }
 
 function guessWithinRange (firstField, secondField) {
-  const minRange = document.getElementById("min-range-num").innerText;
-  const maxRange = document.getElementById("max-range-num").innerText;
-  let minValue = Number.parseInt(minRange);
-  let maxValue = Number.parseInt(maxRange);
-  let firstGuess = Number.parseInt(firstField.value);
-  let secondGuess = Number.parseInt(secondField.value);
+  var minRange = document.getElementById("min-range-num").innerText;
+  var maxRange = document.getElementById("max-range-num").innerText;
+  var minValue = Number.parseInt(minRange);
+  var maxValue = Number.parseInt(maxRange);
+  var firstGuess = Number.parseInt(firstField.value);
+  var secondGuess = Number.parseInt(secondField.value);
   return {
     firstGuess: firstGuess >= minRange && firstGuess <= maxRange,
     secondGuess: secondGuess >= minRange && secondGuess <= maxRange
@@ -153,21 +153,21 @@ function guessWithinRange (firstField, secondField) {
 }
 
 function updateRange () {
-  const minRange = document.getElementById("min-range-num");
-  const maxRange = document.getElementById("max-range-num");
-  const newMin = Number.parseInt(minRange.innerText) - 10;
-  const newMax = Number.parseInt(maxRange.innerText) + 10;
+  var minRange = document.getElementById("min-range-num");
+  var maxRange = document.getElementById("max-range-num");
+  var newMin = Number.parseInt(minRange.innerText) - 10;
+  var newMax = Number.parseInt(maxRange.innerText) + 10;
   minRange.innerText = newMin;
   maxRange.innerText = newMax;
   randNumb = generateRandomNumber(newMin, newMax);
 }
 
 function toggleDisable() {
-  const minRangeValue = document.getElementById("min-range-input").value;
-  const maxRangeValue = document.getElementById("max-range-input").value;
-  const updateRangeButton = document.getElementById('update-range-button');
-  const min = Number.parseInt(minRangeValue);
-  const max = Number.parseInt(maxRangeValue);
+  var minRangeValue = document.getElementById("min-range-input").value;
+  var maxRangeValue = document.getElementById("max-range-input").value;
+  var updateRangeButton = document.getElementById('update-range-button');
+  var min = Number.parseInt(minRangeValue);
+  var max = Number.parseInt(maxRangeValue);
   if (min < max && min || min == 0 && max || max == 0) {
     updateRangeButton.classList.remove('disabled');
   } else {
@@ -176,17 +176,17 @@ function toggleDisable() {
 }
 
 function setRange() {
-  const minRangeInput = document.getElementById("min-range-input");
-  const maxRangeInput = document.getElementById("max-range-input");
-  const maxErrorCont = document.getElementById('max-error-cont');
-  let minRangeValue = Number.parseInt(minRangeInput.value);
-  let maxRangeValue = Number.parseInt(maxRangeInput.value);
+  var minRangeInput = document.getElementById("min-range-input");
+  var maxRangeInput = document.getElementById("max-range-input");
+  var maxErrorCont = document.getElementById('max-error-cont');
+  var minRangeValue = Number.parseInt(minRangeInput.value);
+  var maxRangeValue = Number.parseInt(maxRangeInput.value);
   if (minRangeValue < maxRangeValue) {
     setRangeHTML(maxRangeInput, minRangeInput);
     randNumb = generateRandomNumber(minRangeValue, maxRangeValue);
     removeErrorMsgs(maxRangeInput, maxErrorCont);
     rangeField.reset();
-    const updateRangeButton = document.getElementById('update-range-button');
+    var updateRangeButton = document.getElementById('update-range-button');
     updateRangeButton.classList.add('disabled');
     event.preventDefault();
   } else {
@@ -195,8 +195,8 @@ function setRange() {
 };
 
 function setRangeHTML(maxRangeInput, minRangeInput) {
-  const minRange = document.getElementById("min-range-num");
-  const maxRange = document.getElementById("max-range-num");
+  var minRange = document.getElementById("min-range-num");
+  var maxRange = document.getElementById("max-range-num");
   minRange.innerHTML = minRangeInput.value;
   maxRange.innerHTML = maxRangeInput.value;
 }
@@ -221,39 +221,49 @@ function generateRandomNumber(min=0, max=100) {
 function guessComparison (firstUserGuess, secondUserGuess, firstUserName, secondUserName) {
   firstGuess = Number.parseInt(firstUserGuess);
   secondGuess = Number.parseInt(secondUserGuess);
-  let firstGuessProximity;
-  let secondGuessProximity
-  if (firstGuess > randNumb) {
+  var firstProximity = guessOneComparison(firstGuess);
+  var secondProximity = guessTwoComparison(secondGuess);
+  insertGuessProximity(firstProximity, secondProximity);
+}
+
+function guessOneComparison(guessOne) {
+  var firstGuessProximity;
+  if (guessOne > randNumb) {
     firstGuessProximity = `that's too high`
-  } else if (firstGuess < randNumb) {
+  } else if (guessOne < randNumb) {
     firstGuessProximity = `that's too low`
-  } else if (firstGuess === randNumb) {
+  } else if (guessOne === randNumb) {
     stopTimer();
     firstGuessProximity = 'BOOM!'
-    insertResultCard(firstUserName, secondUserName, firstUserName);
+    insertResultCard(challengerOneNameInput.value, challengerTwoNameInput.value, challengerOneNameInput.value);
     updateRange();
     resetTimer();
     guessCounter = 0;
   }
-  if (secondGuess > randNumb) {
+  return firstGuessProximity;
+}
+
+function guessTwoComparison(guessTwo) {
+  var secondGuessProximity;
+  if (guessTwo > randNumb) {
     secondGuessProximity = `that's too high`
-  } else if (secondGuess < randNumb) {
+  } else if (guessTwo < randNumb) {
     secondGuessProximity = `that's too low`
-  } else if (secondGuess === randNumb) {
+  } else if (guessTwo === randNumb) {
     stopTimer();
     secondGuessProximity = 'BOOM!'
-    insertResultCard(firstUserName, secondUserName, secondUserName);
+    insertResultCard(challengerOneNameInput.value, challengerTwoNameInput.value, challengerTwoNameInput.value);
     randNumb = generateRandomNumber();
     updateRange();
     resetTimer();
     guessCounter = 0;
   }
-  insertGuessProximity(firstGuessProximity, secondGuessProximity);
+  return secondGuessProximity;
 }
 
 function insertGuessProximity (userOneProximity, userTwoProximity) {
-  const firstGuessCont = document.getElementById('user-one-guess-result');
-  const secondGuessCont = document.getElementById('user-two-guess-result');
+  var firstGuessCont = document.getElementById('user-one-guess-result');
+  var secondGuessCont = document.getElementById('user-two-guess-result');
   firstGuessCont.innerText = userOneProximity;
   secondGuessCont.innerText = userTwoProximity;
 }
