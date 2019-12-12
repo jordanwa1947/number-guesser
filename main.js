@@ -24,6 +24,10 @@ var challengerTwoGuess = document.getElementById('challenger-two-guess-display')
 var challengerTwoNameInput = document.getElementById('challenger-two-name');
 var challengerTwoGuessInput = document.getElementById('challenger-two-guess');
 
+var minRangeInput = document.getElementById("min-range-input");
+var maxRangeInput = document.getElementById("max-range-input");
+var maxErrorCont = document.getElementById('max-error-cont');
+
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
@@ -117,6 +121,7 @@ function resetEntireGame() {
   removeGuessErrorMsgs();
   clearGuessFields();
   clearResultCards();
+  resetRangeForm()
   resetRange();
   guessCounter = 0;
   resetTimer();
@@ -193,11 +198,9 @@ function updateRange () {
 }
 
 function toggleDisable() {
-  var minRangeValue = document.getElementById("min-range-input").value;
-  var maxRangeValue = document.getElementById("max-range-input").value;
   var updateRangeButton = document.getElementById('update-range-button');
-  var min = Number.parseInt(minRangeValue);
-  var max = Number.parseInt(maxRangeValue);
+  var min = Number.parseInt(minRangeInput.value);
+  var max = Number.parseInt(maxRangeInput.value);
   if (min < max && min || min == 0 && max || max == 0) {
     updateRangeButton.classList.remove('disabled');
   } else {
@@ -206,25 +209,27 @@ function toggleDisable() {
 }
 
 function setRange() {
-  var minRangeInput = document.getElementById("min-range-input");
-  var maxRangeInput = document.getElementById("max-range-input");
-  var maxErrorCont = document.getElementById('max-error-cont');
   var minRangeValue = Number.parseInt(minRangeInput.value);
   var maxRangeValue = Number.parseInt(maxRangeInput.value);
   if (minRangeValue < maxRangeValue) {
-    setRangeHTML(maxRangeInput, minRangeInput);
-    randNumb = generateRandomNumber(minRangeValue, maxRangeValue);
-    removeErrorMsgs(maxRangeInput, maxErrorCont);
-    rangeField.reset();
     var updateRangeButton = document.getElementById('update-range-button');
     updateRangeButton.classList.add('disabled');
+    resetRangeForm();
     event.preventDefault();
   } else {
     insertErrorMessage(maxRangeInput, maxErrorCont, 'Must be greater than min');
   }
 };
 
-function setRangeHTML(maxRangeInput, minRangeInput) {
+function resetRangeForm() {
+  setRangeHTML();
+  console.log(minRangeInput.value, maxRangeInput.value)
+  randNumb = generateRandomNumber(minRangeInput.value, maxRangeInput.value);
+  removeErrorMsgs(maxRangeInput, maxErrorCont);
+  rangeField.reset();
+}
+
+function setRangeHTML() {
   var minRange = document.getElementById("min-range-num");
   var maxRange = document.getElementById("max-range-num");
   minRange.innerHTML = minRangeInput.value;
