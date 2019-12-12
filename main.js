@@ -30,6 +30,7 @@ clearFormButton.addEventListener('click', clearGuessFields);
 gameplayCont.addEventListener('submit', displayFormData);
 rangeField.addEventListener('submit', setRange);
 rangeField.addEventListener('input', toggleDisable);
+resetGame.addEventListener('click', resetEntireGame);
 
 function stopTimer() {
   timeStop = Date.now();
@@ -86,6 +87,12 @@ function disableGuessButtons () {
   resetGame.setAttribute('disabled', "");
 }
 
+function enableResetButton() {
+  resetGame.removeAttribute('disabled');
+  resetGame.classList.remove('disabled');
+
+}
+
 function incrementGuessCounter() {
   guessCounter += 2;
 }
@@ -98,11 +105,34 @@ function displayFormData() {
     displayGuessHtml();
     removeGuessErrorMsgs();
     clearGuessFields();
+    enableResetButton();
     event.preventDefault();
   } else {
     insertGuessErrorMsg(withinRange);
     event.preventDefault();
   }
+}
+
+function resetEntireGame() {
+  removeGuessErrorMsgs();
+  clearGuessFields();
+  clearResultCards();
+  resetRange();
+  guessCounter = 0;
+  resetTimer();
+  event.preventDefault();
+}
+
+function resetRange() {
+  var minRange = document.getElementById("min-range-num");
+  var maxRange = document.getElementById("max-range-num");
+  randNumb = generateRandomNumber();
+  minRange.innerText = '1';
+  maxRange.innerText = '100';
+}
+
+function clearResultCards() {
+  gameResultsColumn.innerHTML = '';
 }
 
 function displayGuessHtml() {
