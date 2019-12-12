@@ -24,12 +24,17 @@ var challengerTwoGuess = document.getElementById('challenger-two-guess-display')
 var challengerTwoNameInput = document.getElementById('challenger-two-name');
 var challengerTwoGuessInput = document.getElementById('challenger-two-guess');
 
+var minRangeInput = document.getElementById("min-range-input");
+var maxRangeInput = document.getElementById("max-range-input");
+var maxErrorCont = document.getElementById('max-error-cont');
+
 bubbleParent.addEventListener('input', mainFormValidation);
 guessForm.addEventListener('keyup', activateClearFormButton);
 clearFormButton.addEventListener('click', clearGuessFields);
 gameplayCont.addEventListener('submit', displayFormData);
 rangeField.addEventListener('submit', setRange);
 rangeField.addEventListener('input', toggleDisable);
+resetGame.addEventListener('click', resetEntireGame);
 
 function stopTimer() {
   timeStop = Date.now();
@@ -82,6 +87,14 @@ function disableGuessButtons () {
   clearFormButton.setAttribute('disabled', "");
   submitGuess.classList.add('disabled');
   submitGuess.setAttribute('disabled', "");
+}
+
+function enableResetButton() {
+  resetGame.removeAttribute('disabled');
+  resetGame.classList.remove('disabled');
+}
+
+function disableResetButton() {
   resetGame.classList.add('disabled');
   resetGame.setAttribute('disabled', "");
 }
@@ -98,11 +111,44 @@ function displayFormData() {
     displayGuessHtml();
     removeGuessErrorMsgs();
     clearGuessFields();
+    enableResetButton();
     event.preventDefault();
   } else {
     insertGuessErrorMsg(withinRange);
     event.preventDefault();
   }
+}
+
+function resetEntireGame() {
+  removeGuessErrorMsgs();
+  disableResetButton();
+  clearGuessFields();
+  clearResultCards();
+  resetGuessHtml();
+  resetRangeForm()
+  resetRange();
+  resetTimer();
+  guessCounter = 0;
+}
+
+function resetGuessHtml() {
+  challengerOneName.innerHTML = `<span>Challenger 1 Name</span>`;
+  challengerOneGuess.innerHTML = `<p class="challenger-guess-number"></p>`;
+  challengerTwoName.innerHTML = `<span>Challenger 2 Name</span>`;
+  challengerTwoGuess.innerHTML = `<p class="challenger-guess-number"></p>`;
+  insertGuessProximity ('No guesses yet!', 'No guesses yet!')
+}
+
+function resetRange() {
+  var minRange = document.getElementById("min-range-num");
+  var maxRange = document.getElementById("max-range-num");
+  randNumb = generateRandomNumber();
+  minRange.innerText = '1';
+  maxRange.innerText = '100';
+}
+
+function clearResultCards() {
+  gameResultsColumn.innerHTML = '';
 }
 
 function displayGuessHtml() {
@@ -163,11 +209,9 @@ function updateRange () {
 }
 
 function toggleDisable() {
-  var minRangeValue = document.getElementById("min-range-input").value;
-  var maxRangeValue = document.getElementById("max-range-input").value;
   var updateRangeButton = document.getElementById('update-range-button');
-  var min = Number.parseInt(minRangeValue);
-  var max = Number.parseInt(maxRangeValue);
+  var min = Number.parseInt(minRangeInput.value);
+  var max = Number.parseInt(maxRangeInput.value);
   if (min < max && min || min == 0 && max || max == 0) {
     updateRangeButton.classList.remove('disabled');
   } else {
@@ -176,25 +220,26 @@ function toggleDisable() {
 }
 
 function setRange() {
-  var minRangeInput = document.getElementById("min-range-input");
-  var maxRangeInput = document.getElementById("max-range-input");
-  var maxErrorCont = document.getElementById('max-error-cont');
   var minRangeValue = Number.parseInt(minRangeInput.value);
   var maxRangeValue = Number.parseInt(maxRangeInput.value);
   if (minRangeValue < maxRangeValue) {
-    setRangeHTML(maxRangeInput, minRangeInput);
-    randNumb = generateRandomNumber(minRangeValue, maxRangeValue);
-    removeErrorMsgs(maxRangeInput, maxErrorCont);
-    rangeField.reset();
     var updateRangeButton = document.getElementById('update-range-button');
     updateRangeButton.classList.add('disabled');
+    resetRangeForm();
     event.preventDefault();
   } else {
     insertErrorMessage(maxRangeInput, maxErrorCont, 'Must be greater than min');
   }
 };
 
-function setRangeHTML(maxRangeInput, minRangeInput) {
+function resetRangeForm() {
+  setRangeHTML();
+  randNumb = generateRandomNumber(minRangeInput.value, maxRangeInput.value);
+  removeErrorMsgs(maxRangeInput, maxErrorCont);
+  rangeField.reset();
+}
+
+function setRangeHTML() {
   var minRange = document.getElementById("min-range-num");
   var maxRange = document.getElementById("max-range-num");
   minRange.innerHTML = minRangeInput.value;
