@@ -128,6 +128,16 @@ main {
   min-width: 300px;
 }
 
+button:hover {
+  background-color: #dd1972;
+  border-color: #dd1972;
+}
+
+.disabled:hover {
+  background-color: #d0d2d3;
+  border-color: rgb(220,221,221);
+}
+
 /*
 End of global document styles
 */
