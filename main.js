@@ -121,11 +121,19 @@ function resetEntireGame() {
   removeGuessErrorMsgs();
   clearGuessFields();
   clearResultCards();
+  resetGuessHtml();
   resetRangeForm()
   resetRange();
-  guessCounter = 0;
   resetTimer();
-  event.preventDefault();
+  guessCounter = 0;
+}
+
+function resetGuessHtml() {
+  challengerOneName.innerHTML = `<span>Challenger 1 Name</span>`;
+  challengerOneGuess.innerHTML = `<p class="challenger-guess-number"></p>`;
+  challengerTwoName.innerHTML = `<span>Challenger 2 Name</span>`;
+  challengerTwoGuess.innerHTML = `<p class="challenger-guess-number"></p>`;
+  insertGuessProximity ('No guesses yet!', 'No guesses yet!')
 }
 
 function resetRange() {
