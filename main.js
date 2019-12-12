@@ -87,14 +87,16 @@ function disableGuessButtons () {
   clearFormButton.setAttribute('disabled', "");
   submitGuess.classList.add('disabled');
   submitGuess.setAttribute('disabled', "");
-  resetGame.classList.add('disabled');
-  resetGame.setAttribute('disabled', "");
 }
 
 function enableResetButton() {
   resetGame.removeAttribute('disabled');
   resetGame.classList.remove('disabled');
+}
 
+function disableResetButton() {
+  resetGame.classList.add('disabled');
+  resetGame.setAttribute('disabled', "");
 }
 
 function incrementGuessCounter() {
@@ -119,6 +121,7 @@ function displayFormData() {
 
 function resetEntireGame() {
   removeGuessErrorMsgs();
+  disableResetButton();
   clearGuessFields();
   clearResultCards();
   resetGuessHtml();
@@ -231,7 +234,6 @@ function setRange() {
 
 function resetRangeForm() {
   setRangeHTML();
-  console.log(minRangeInput.value, maxRangeInput.value)
   randNumb = generateRandomNumber(minRangeInput.value, maxRangeInput.value);
   removeErrorMsgs(maxRangeInput, maxErrorCont);
   rangeField.reset();
